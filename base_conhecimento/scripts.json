@@ -1,0 +1,131 @@
+[
+  {
+    "palavras_chave": [
+      "buscar coluna",
+      "nome da coluna",
+      "coluna",
+      "tabela"
+    ],
+    "script": "SELECT t.name AS NomeDaTabela, c.name AS NomeDaColuna\nFROM sys.tables t\nINNER JOIN sys.columns c ON t.object_id = c.object_id\nWHERE c.name LIKE '%NOME_DA_COLUNA%';"
+  },
+  {
+    "palavras_chave": [
+      "alterar status nfe",
+      "mudar status nota fiscal",
+      "nfeid",
+      "status nota",
+      "update status nfe",
+      "statusnotafiscal"
+    ],
+    "script": "UPDATE nfe SET statusnotafiscal = VALOR_STATUS WHERE nfeid = VALOR_ID;\n\n-- Enum StatusNotaFiscal:\n-- 0 = Aberta\n-- 1 = Enviado\n-- 2 = Cancelada\n-- 3 = Anulada\n-- 4 = AguardandoEnvio\n-- 5 = Autorizada\n-- 6 = AguardandoCancelamento\n-- 7 = AguardandoContabilizacao\n-- 8 = Denegada\n-- 9 = EmProcessamento"
+  },
+  {
+    "palavras_chave": [
+      "alterar status processo",
+      "status processo importacao",
+      "processoid",
+      "update status processo"
+    ],
+    "script": "UPDATE processo SET status = VALOR_STATUS WHERE processoid = VALOR_ID;\n\n-- Enum StatusProcesso:\n-- 0 = Aberto\n-- 1 = Fechado\n-- 2 = Cancelado\n-- 3 = Rechacado"
+  },
+  {
+    "palavras_chave": [
+      "liberar processo di",
+      "alterar processo di",
+      "xmldigeradocomo",
+      "permitir nova di"
+    ],
+    "script": "UPDATE processo SET xmldigeradocomo = 0 WHERE processoid = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "alterar status título",
+      "status contaspagar",
+      "contaspagarid",
+      "status titulo",
+      "titulo a pagar"
+    ],
+    "script": "UPDATE contaspagar SET statustitulo = VALOR_STATUS WHERE contaspagarid = VALOR_ID;\n\n-- Enum StatusTitulo:\n-- 0 = EmAberto\n-- 1 = Baixado\n-- 2 = Cancelado\n-- 3 = BaixadoParcial\n-- 4 = Excluido"
+  },
+  {
+    "palavras_chave": [
+      "alterar status pedido",
+      "status pedidocompra",
+      "pedidocompraid",
+      "pedido compra"
+    ],
+    "script": "UPDATE pedidocompra SET statuspedidocompra = VALOR_STATUS WHERE pedidocompraid = VALOR_ID;\n\n-- Enum StatusPedidoCompra:\n-- 0 = Aberto\n-- 1 = Fechado\n-- 2 = Cancelado\n-- 3 = Pendente"
+  },
+  {
+    "palavras_chave": [
+      "alterar status nfse",
+      "status nota fiscal serviço",
+      "notafiscalservicoid",
+      "nota fiscal servico",
+      "update status nfs"
+    ],
+    "script": "UPDATE notafiscalservico SET statusnotafiscalservico = VALOR_STATUS WHERE notafiscalservicoid = VALOR_ID;\n\n-- Enum StatusNotaFiscalServico:\n-- 0 = Aberta\n-- 1 = Enviada\n-- 2 = Cancelada\n-- 3 = Registrada"
+  },
+  {
+    "palavras_chave": [
+      "alterar email usuario",
+      "update email",
+      "usuarioid",
+      "email do usuario",
+      "atualizar email usuario"
+    ],
+    "script": "UPDATE usuario SET email = 'novoemail@example.com' WHERE usuarioid = VALOR_ID;\nUPDATE aspnetusers SET email = 'novoemail@example.com' WHERE id = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "alterar login usuario",
+      "alterar nome usuario",
+      "username",
+      "login do usuario",
+      "update username"
+    ],
+    "script": "UPDATE usuario SET login = 'NOVO_LOGIN' WHERE usuarioid = VALOR_ID;\nUPDATE aspnetusers SET username = 'NOVO_LOGIN' WHERE id = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "desativar 2fa",
+      "autenticação dois fatores",
+      "twofactorenabled",
+      "remover 2fa",
+      "desligar 2fa"
+    ],
+    "script": "UPDATE aspnetusers SET twofactorenabled = 0 WHERE id = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "desbloquear usuário",
+      "liberar login bloqueado",
+      "lockoutenddateutc",
+      "usuario bloqueado",
+      "desbloquear conta"
+    ],
+    "script": "UPDATE aspnetusers SET lockoutenddateutc = NULL WHERE id = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "liberar saldo nfe",
+      "saldo quantidade",
+      "nota fiscal de entrada",
+      "gerar nota fiscal de saída",
+      "liberar saldo entrada"
+    ],
+    "script": "UPDATE nfeitem SET saldoquantidade = quantidade WHERE nfeid = VALOR_ID;"
+  },
+  {
+    "palavras_chave": [
+      "auditoria",
+      "log de auditoria",
+      "alterações no banco",
+      "auditar entidade",
+      "registro de alterações",
+      "auditlog",
+      "auditoria banco de dados"
+    ],
+    "script": "SELECT * FROM audit.auditlog WHERE entityname = 'ENTIDADE' AND primarykeyvalue = VALOR_ID\n-- AND auditdata LIKE '%%'\n-- AND changes LIKE '%%'\nORDER BY datechanged DESC;"
+  }
+]
