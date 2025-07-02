@@ -25,7 +25,6 @@
     <Compile Include="analytics.py" />
     <Compile Include="app.py" />
     <Compile Include="azure_integration.py" />
-    <Compile Include="IA_Suporte_Narwal.py" />
     <Compile Include="load_docs.py" />
     <Compile Include="main.py" />
     <Compile Include="responder.py" />
@@ -38,6 +37,7 @@
     <Content Include=".env" />
     <Content Include=".gitignore" />
     <Content Include="requirements.txt" />
+    <Content Include="styles.css" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

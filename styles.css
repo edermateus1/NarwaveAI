@@ -1,0 +1,106 @@
+﻿/* Reset e fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fundo escuro unificado baseado no rodapé (#1e1f23) */
+html, body, .main, .block-container, .stApp,
+section.main > div,
+section.main > div:nth-child(1),
+section.main > div:nth-child(2),
+section[data-testid="stChatInput"],
+[data-testid="stChatMessageInput"],
+div[class^="st-emotion-cache-hzygls"] {
+    background-color: #1e1f23 !important;
+    color: #ececf1 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Centralização da logo */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Logo */
+.hero-logo {
+    width: 180px;
+}
+
+/* Expander e container dele */
+section[data-testid="stExpander"],
+section[data-testid="stExpander"] > div {
+    background-color: #1e1f23 !important;
+    border: 1px solid #3e3f4b;
+    border-radius: 8px;
+}
+
+/* Botão engrenagem e reprocessar */
+.botao-engrenagem div[data-testid="stButton"] button,
+.reprocessar-button div[data-testid="stButton"] button {
+    background-color: #3c3f50 !important;
+    color: white !important;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 18px;
+    border: none;
+}
+
+/* Chat bubble estilo ChatGPT */
+div[data-testid="chatMessageContent"] {
+    background-color: #444654;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Área inferior - input */
+.stChatInputContainer,
+section.main > div:nth-last-child(1),
+section[data-testid="stChatInput"],
+section[data-testid="chatInput"] {
+    background-color: #1e1f23 !important;
+    box-shadow: none !important;
+    border-top: 1px solid #3e3f4b !important;
+    padding: 16px !important;
+}
+
+    /* Textarea */
+    .stChatInputContainer textarea {
+        background-color: #40414f !important;
+        color: #ececf1 !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+    }
+
+        /* Placeholder */
+        .stChatInputContainer textarea::placeholder {
+            color: #8e8ea0 !important;
+        }
+
+    /* Botão de envio */
+    .stChatInputContainer button[kind="icon"] {
+        background-color: #1e1f23 !important;
+        border: 1px solid #565869 !important;
+        color: #ececf1 !important;
+        border-radius: 8px !important;
+        padding: 10px 16px !important;
+    }
+
+/* Footer */
+footer, footer * {
+    background-color: #1e1f23 !important;
+    border: none !important;
+    box-shadow: none !important;
+}

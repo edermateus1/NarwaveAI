@@ -60,7 +60,7 @@ def criar_ia_resposta(reprocessar=False):
         print("[IA] Reprocessamento concluído.")
 
     modelo = ChatOpenAI(
-        model_name="gpt-3.5-turbo",
+        model_name="gpt-4",
         temperature=0.1,
         max_tokens=500
     )
@@ -101,7 +101,6 @@ def responder_pergunta(pergunta):
     if ia is None:
         ia = criar_ia_resposta()
 
-    # Verifica se a pergunta sugere diretamente que é um comando SQL
     termos_sql = ["sql", "script", "update", "select", "insert", "delete"]
     if any(t in pergunta.lower() for t in termos_sql):
         sugestao = sugerir_script(pergunta)
@@ -124,23 +123,22 @@ def responder_pergunta(pergunta):
 
         if fonte.get("source") == "faq" and "id" in fonte:
             veio_de_faq = True
-            partes.append(
-                f"\n🔗 [Ver chamado no Movidesk](https://narwalsistemas.movidesk.com/Ticket/Edit/{fonte['id']})"
-            )
+            if "não tenho informações suficientes" not in resposta["result"].lower():
+                partes.append(
+                    f"\n🔗 [Ver chamado no Movidesk](https://narwalsistemas.movidesk.com/Ticket/Edit/{fonte['id']})"
+                )
         elif "source" in fonte:
             nome_arquivo = os.path.basename(fonte["source"])
             caminho_local = os.path.join("base_conhecimento", "manuais", nome_arquivo)
             st.session_state["pdf_path"] = caminho_local
             partes.append(f"\n📄 Manual: `{nome_arquivo}`")
 
-    # Se não vier de FAQ, tenta sugerir script complementarmente
     if not veio_de_faq:
         sugestao = sugerir_script(pergunta)
         if sugestao:
             partes.append(f"\n💡 **Sugestão de script SQL:**\n```sql\n{sugestao.strip()}\n```")
 
     return "\n\n".join(partes)
-
 
 def registrar_feedback(pergunta, resposta, avaliacao):
     entrada = {
