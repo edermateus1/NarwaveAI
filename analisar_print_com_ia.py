@@ -4,8 +4,11 @@ import io
 import os
 import json
 from openai import OpenAI
+import openai
+import streamlit as st
 
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 client = OpenAI()
 
 def extrair_erro_com_ia(imagem_bytes):

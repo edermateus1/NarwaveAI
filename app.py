@@ -3,6 +3,29 @@ from responder import responder_pergunta, criar_ia_resposta, registrar_feedback,
 import os
 from analisar_print_com_ia import extrair_erro_com_ia
 import base64
+from dotenv import load_dotenv
+
+# 1. Carrega variáveis do .env (somente local)
+load_dotenv()
+
+# 2. Fallback seguro: tenta usar st.secrets apenas se disponível (no Streamlit Cloud)
+try:
+    import streamlit as st
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    AZURE_OPENAI_API_KEY = st.secrets["AZURE_OPENAI_API_KEY"]
+    AZURE_OPENAI_ENDPOINT = st.secrets["AZURE_OPENAI_ENDPOINT"]
+    AZURE_OPENAI_DEPLOYMENT = st.secrets["AZURE_OPENAI_DEPLOYMENT"]
+except Exception:
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+    AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY", "")
+    AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "")
+    AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT", "")
+
+# 3. Injeta no os.environ para bibliotecas que dependem disso (Langchain, OpenAI etc)
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.environ["AZURE_OPENAI_API_KEY"] = AZURE_OPENAI_API_KEY
+os.environ["AZURE_OPENAI_ENDPOINT"] = AZURE_OPENAI_ENDPOINT
+os.environ["AZURE_OPENAI_DEPLOYMENT"] = AZURE_OPENAI_DEPLOYMENT
 
 # Configuração da página
 st.set_page_config(page_title="Narwave AI", page_icon="🐋", layout="centered")
