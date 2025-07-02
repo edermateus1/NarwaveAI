@@ -5,6 +5,7 @@ from analisar_print_com_ia import extrair_erro_com_ia
 import base64
 from dotenv import load_dotenv
 
+
 # 1. Carrega variáveis do .env (somente local)
 load_dotenv()
 
