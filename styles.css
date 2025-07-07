@@ -54,6 +54,22 @@ section[data-testid="stExpander"] > div {
     border: none;
 }
 
+/* Botões gerais */
+div[data-testid="stButton"] button {
+    background-color: #3c3f50 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    font-size: 16px !important;
+    border: none !important;
+    transition: background-color 0.2s ease;
+}
+
+    /* Hover nos botões */
+    div[data-testid="stButton"] button:hover {
+        background-color: #505365 !important;
+    }
+
 /* Chat bubble estilo ChatGPT */
 div[data-testid="chatMessageContent"] {
     background-color: #444654;
@@ -103,4 +119,15 @@ footer, footer * {
     background-color: #1e1f23 !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+/* Alerta de template N2 detectado */
+.n2-alert {
+    background-color: #2b2c33;
+    border-left: 4px solid #f39c12;
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #f1c40f;
 }

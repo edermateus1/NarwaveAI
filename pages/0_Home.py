@@ -1,9 +1,14 @@
-﻿import streamlit as st
-from responder import responder_pergunta, criar_ia_resposta, registrar_feedback, sugerir_script
+﻿import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import streamlit as st
+from responder import responder_pergunta, criar_ia_resposta, registrar_feedback, sugerir_script
 from analisar_print_com_ia import extrair_erro_com_ia
-import base64
 from dotenv import load_dotenv
+import base64
+
+from utils import aplicar_estilo_base
 
 
 # 1. Carrega variáveis do .env (somente local)
@@ -11,7 +16,6 @@ load_dotenv()
 
 # 2. Fallback seguro: tenta usar st.secrets apenas se disponível (no Streamlit Cloud)
 try:
-    import streamlit as st
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     AZURE_OPENAI_API_KEY = st.secrets["AZURE_OPENAI_API_KEY"]
     AZURE_OPENAI_ENDPOINT = st.secrets["AZURE_OPENAI_ENDPOINT"]
@@ -30,6 +34,7 @@ os.environ["AZURE_OPENAI_DEPLOYMENT"] = AZURE_OPENAI_DEPLOYMENT
 
 # Configuração da página
 st.set_page_config(page_title="Narwave AI", page_icon="🐋", layout="centered")
+aplicar_estilo_base()  # <- Aplica CSS + logo centralizada
 
 # Injetar CSS externo
 css_path = "styles.css"
@@ -39,27 +44,12 @@ if os.path.exists(css_path):
 else:
     st.warning("Arquivo styles.css não encontrado.")
 
-# Carregar logo em base64
-logo_path = "logo.png"
-with open(logo_path, "rb") as f:
-    base64_logo = base64.b64encode(f.read()).decode()
 
 # Estados da sessão
-if "historico" not in st.session_state:
-    st.session_state["historico"] = []
-if "mostrar_opcoes" not in st.session_state:
-    st.session_state["mostrar_opcoes"] = False
-if "feedbacks_dados" not in st.session_state:
-    st.session_state["feedbacks_dados"] = {}
-if "menu_expandido" not in st.session_state:
-    st.session_state["menu_expandido"] = False
+for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", "ir_para_template_n2"]:
+    if key not in st.session_state:
+        st.session_state[key] = False if key != "historico" and key != "feedbacks_dados" else [] if key == "historico" else {}
 
-# Logo
-st.markdown(f"""
-    <div class="hero-container">
-        <img class="hero-logo" src='data:image/png;base64,{base64_logo}' />
-    </div>
-""", unsafe_allow_html=True)
 
 # Expander para análise de imagem
 with st.expander("📸 Analisar print de tela (via IA)", expanded=False):
@@ -89,7 +79,6 @@ with st.expander("📸 Analisar print de tela (via IA)", expanded=False):
             else:
                 st.info("Nenhum erro técnico foi detectado na imagem.")
 
-        # Resetar file_uploader com segurança
         st.session_state["uploader_key"] += 1
 
 # Histórico de mensagens
@@ -160,20 +149,24 @@ if st.session_state.get("ultima_pergunta"):
                     st.markdown(f"🔗 [{item['title']}]({item['url']})")
             else:
                 st.info("Nenhum card relacionado foi encontrado no Azure.")
-
 # Novo menu lateral com toggle
-menu_expandido = st.session_state.get("menu_expandido", False)
-
 def alternar_menu():
-    st.session_state["menu_expandido"] = not st.session_state.get("menu_expandido", False)
+    st.session_state["menu_expandido"] = not st.session_state["menu_expandido"]
 
 with st.sidebar:
-    col1, col2 = st.columns([0.2, 0.8]) if menu_expandido else st.columns([1, 0.001])
+    col1, col2 = st.columns([0.2, 0.8]) if st.session_state.get("menu_expandido", False) else st.columns([1, 0.001])
     with col1:
         st.button("⚙️", key="toggle_menu", on_click=alternar_menu, help="Expandir/recolher menu")
 
-    if menu_expandido:
+    if st.session_state.get("menu_expandido", False):
         with st.container():
             st.markdown('<div class="menu-lateral-wrapper">', unsafe_allow_html=True)
             st.button("🔄 Reprocessar", key="reprocessar", on_click=lambda: criar_ia_resposta(reprocessar=True))
+            st.button("📋 Analisar template N2", on_click=lambda: st.session_state.update({"ir_para_template_n2": True}))
             st.markdown('</div>', unsafe_allow_html=True)
+
+# Redirecionamento
+if st.session_state.get("ir_para_template_n2"):
+    st.session_state["ir_para_template_n2"] = False  # evita loop de redirecionamento
+    st.switch_page("Analisar_Template_N2")  # <- nome visível da página na barra lateral
+    st.write(st.runtime.scriptrunner.get_pages(""))

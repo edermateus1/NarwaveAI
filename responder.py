@@ -5,6 +5,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
+from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 from load_docs import carregar_documentos, dividir_documentos
 import os
@@ -65,12 +66,30 @@ def criar_ia_resposta(reprocessar=False):
         max_tokens=500
     )
 
+    prompt_pt = PromptTemplate(
+        input_variables=["context", "question"],
+        template="""
+Você é um assistente técnico da Narwal Sistemas.
+
+Sempre responda em português, de forma clara, didática e objetiva.
+
+Com base nas informações abaixo:
+
+{context}
+
+Responda à seguinte dúvida ou erro:
+
+{question}
+"""
+    )
+
     chain = RetrievalQA.from_chain_type(
         llm=modelo,
         retriever=vetorstore.as_retriever(
             search_type="similarity",
-            search_kwargs={"k": 10}  # Aumentado de 5 para 10
+            search_kwargs={"k": 10}
         ),
+        chain_type_kwargs={"prompt": prompt_pt},
         return_source_documents=True
     )
 

@@ -22,20 +22,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="analisar_print_com_ia.py" />
     <Compile Include="analytics.py" />
     <Compile Include="app.py" />
     <Compile Include="azure_integration.py" />
+    <Compile Include="base_conhecimento\analisar_template_n2.py" />
     <Compile Include="load_docs.py" />
     <Compile Include="main.py" />
+    <Compile Include="ocr_highlight.py" />
+    <Compile Include="pages\0_Home.py" />
+    <Compile Include="pages\Analisar_Template_N2.py" />
     <Compile Include="responder.py" />
+    <Compile Include="utils.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="base_conhecimento\" />
     <Folder Include="base_conhecimento\manuais\" />
+    <Folder Include="pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
     <Content Include=".gitignore" />
+    <Content Include="base_conhecimento\faqs.json" />
+    <Content Include="base_conhecimento\scripts.json" />
+    <Content Include="feedback_log.jsonl" />
     <Content Include="requirements.txt" />
     <Content Include="styles.css" />
   </ItemGroup>
