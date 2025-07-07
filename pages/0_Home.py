@@ -4,12 +4,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import streamlit as st
 from responder import responder_pergunta, criar_ia_resposta, registrar_feedback, sugerir_script
-from analisar_print_com_ia import extrair_erro_com_ia
+from analisar_print_com_ia import analisar_imagem_com_contexto
 from dotenv import load_dotenv
 import base64
 
 from utils import aplicar_estilo_base
-
 
 # 1. Carrega variáveis do .env (somente local)
 load_dotenv()
@@ -34,7 +33,7 @@ os.environ["AZURE_OPENAI_DEPLOYMENT"] = AZURE_OPENAI_DEPLOYMENT
 
 # Configuração da página
 st.set_page_config(page_title="Narwave AI", page_icon="🐋", layout="centered")
-aplicar_estilo_base()  # <- Aplica CSS + logo centralizada
+aplicar_estilo_base()
 
 # Injetar CSS externo
 css_path = "styles.css"
@@ -44,42 +43,70 @@ if os.path.exists(css_path):
 else:
     st.warning("Arquivo styles.css não encontrado.")
 
-
 # Estados da sessão
-for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", "ir_para_template_n2"]:
+for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", "ir_para_template_n2", "consulta_azure"]:
     if key not in st.session_state:
-        st.session_state[key] = False if key != "historico" and key != "feedbacks_dados" else [] if key == "historico" else {}
+        st.session_state[key] = [] if key == "historico" else {} if key == "feedbacks_dados" else False
 
-
-# Expander para análise de imagem
-with st.expander("📸 Analisar print de tela (via IA)", expanded=False):
-    if "uploader_key" not in st.session_state:
-        st.session_state["uploader_key"] = 0
-
-    imagem = st.file_uploader(
-        "Envie um print com erro",
-        type=["png", "jpg", "jpeg"],
-        key=f"file_uploader_{st.session_state['uploader_key']}"
-    )
+# Expander para análise de imagem com contexto
+with st.expander("📸 Analisar com IA", expanded=False):
+    col1, col2 = st.columns([0.7, 0.3])
+    with col1:
+        imagem = st.file_uploader("Imagem com erro (print de tela)", type=["png", "jpg", "jpeg"], key="img_upload")
+    with col2:
+        comentario = st.text_input("Descrição do erro", placeholder="Ex: ocorre ao salvar a nota...", key="comentario_input")
 
     if imagem:
-        imagem_bytes = imagem.read()
-        with st.spinner("Analisando imagem com IA..."):
-            resultado = extrair_erro_com_ia(imagem_bytes)
+        if st.button("📤 Enviar para análise"):
+            imagem_bytes = imagem.read()
+            with st.spinner("Analisando erro com IA e buscando soluções..."):
+                resultado = analisar_imagem_com_contexto(imagem_bytes, comentario)
 
-        if resultado:
-            st.markdown("### 🧐 Resultado da análise:")
-            if resultado["erro_detectado"]:
-                st.markdown("#### ⚠️ Erro identificado:")
-                st.code(resultado["erro_detectado"])
-                st.markdown("**📄 O que isso significa:**")
-                st.markdown(resultado["explicacao"])
-                st.markdown("**🔧 O que o N1 pode fazer:**")
-                st.markdown(resultado["acao_n1"])
-            else:
-                st.info("Nenhum erro técnico foi detectado na imagem.")
+            if resultado:
+                st.markdown("## 🦢 Resultado da Análise:")
 
-        st.session_state["uploader_key"] += 1
+                if resultado.get("erro_detectado"):
+                    st.markdown(f"**Erro identificado:** `{resultado['erro_detectado']}`")
+
+                if resultado.get("rotina"):
+                    st.markdown(f"### 🔵 Rotina provável: {resultado['rotina']}")
+
+                if resultado.get("explicacao"):
+                    st.markdown("### 📄 Explicação:")
+                    st.markdown(resultado["explicacao"])
+
+                if resultado.get("acao_n1"):
+                    st.markdown("### ✅ Ação recomendada:")
+                    st.markdown(resultado["acao_n1"])
+
+                if resultado.get("faq_relevante"):
+                    st.markdown("### 📒 Solução sugerida:")
+                    st.markdown(resultado["faq_relevante"])
+
+                if resultado.get("erro_detectado"):
+                    descricao = comentario.strip() if comentario else ""
+                    erro = resultado.get("erro_detectado", "").strip()
+                    rotina = resultado.get("rotina", "").strip()
+
+                    termo = f"{descricao} - {erro}"
+                    if rotina:
+                        termo += f" - {rotina}"
+
+                    st.session_state["consulta_azure"] = termo
+
+# Processamento separado do botão para Azure DevOps
+if st.session_state.get("consulta_azure"):
+    if st.button("🔎 Buscar no Azure DevOps por este erro", key="buscar_erro_azure"):
+        from azure_integration import buscar_work_items
+        with st.spinner("Consultando Azure DevOps..."):
+            resultados = buscar_work_items(st.session_state["consulta_azure"])
+        if resultados:
+            st.markdown("### Resultados encontrados:")
+            for item in resultados:
+                st.markdown(f"🔗 [{item['title']}]({item['url']})")
+        else:
+            st.info("Nenhum card relacionado foi encontrado no Azure.")
+        del st.session_state["consulta_azure"]
 
 # Histórico de mensagens
 for idx, item in enumerate(st.session_state["historico"]):
@@ -149,6 +176,7 @@ if st.session_state.get("ultima_pergunta"):
                     st.markdown(f"🔗 [{item['title']}]({item['url']})")
             else:
                 st.info("Nenhum card relacionado foi encontrado no Azure.")
+
 # Novo menu lateral com toggle
 def alternar_menu():
     st.session_state["menu_expandido"] = not st.session_state["menu_expandido"]
@@ -167,6 +195,6 @@ with st.sidebar:
 
 # Redirecionamento
 if st.session_state.get("ir_para_template_n2"):
-    st.session_state["ir_para_template_n2"] = False  # evita loop de redirecionamento
-    st.switch_page("Analisar_Template_N2")  # <- nome visível da página na barra lateral
+    st.session_state["ir_para_template_n2"] = False
+    st.switch_page("Analisar_Template_N2")
     st.write(st.runtime.scriptrunner.get_pages(""))

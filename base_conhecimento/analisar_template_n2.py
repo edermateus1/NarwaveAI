@@ -1,4 +1,5 @@
 ﻿import re
+from responder import responder_pergunta  # Certifique-se que responder.py está acessível
 
 def analisar_template_n2(texto: str) -> str:
     campos = {
@@ -27,9 +28,22 @@ def analisar_template_n2(texto: str) -> str:
     resposta = "### 🤖 Análise técnica automatizada\n\n"
     resposta += "\n".join(resultado)
 
+    # 🔍 Diagnóstico por palavras-chave simples
     if 'produtos' in texto.lower() and 'não' in texto.lower():
         resposta += "\n\n🔍 Possível falha no vínculo entre produtos e estrutura de simulação. Revise a aba de parâmetros ou filtros por perfil."
     elif 'despesa' in texto.lower() and 'não puxa' in texto.lower():
         resposta += "\n\n⚙️ Verifique se a despesa está com 'Cálculo despesa' configurado como 'Considera parâmetros'."
+
+    # 🧠 Diagnóstico baseado em IA semântica
+    trecho_chave = ""
+    for campo in ["descricao", "analise", "impacto"]:
+        match = re.search(campos[campo], texto, re.IGNORECASE)
+        if match:
+            trecho_chave += match.group(1).strip() + "\n"
+
+    if trecho_chave:
+        resposta_ia = responder_pergunta(trecho_chave.strip())
+        if resposta_ia and "não tenho informações suficientes" not in resposta_ia.lower():
+            resposta += f"\n\n📚 **Solução potencial encontrada com base em casos anteriores:**\n\n{resposta_ia}"
 
     return resposta
