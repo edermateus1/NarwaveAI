@@ -131,3 +131,22 @@ footer, footer * {
     font-size: 15px;
     color: #f1c40f;
 }
+/* Botão Movidesk */
+.botao-movidesk {
+    background-color: #2D7EF7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+    .botao-movidesk:hover {
+        background-color: #1f5fc7;
+    }

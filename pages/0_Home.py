@@ -8,7 +8,8 @@ from analisar_print_com_ia import analisar_imagem_com_contexto
 from dotenv import load_dotenv
 import base64
 
-from utils import aplicar_estilo_base
+from utils import aplicar_estilo_base, gerar_url_movidesk
+from movidesk_integration import buscar_tickets_movidesk
 
 # 1. Carrega variáveis do .env (somente local)
 load_dotenv()
@@ -31,11 +32,18 @@ os.environ["AZURE_OPENAI_API_KEY"] = AZURE_OPENAI_API_KEY
 os.environ["AZURE_OPENAI_ENDPOINT"] = AZURE_OPENAI_ENDPOINT
 os.environ["AZURE_OPENAI_DEPLOYMENT"] = AZURE_OPENAI_DEPLOYMENT
 
+# 4. Carrega token do Movidesk
+try:
+    MOVIDESK_TOKEN = st.secrets["MOVIDESK_TOKEN"]
+except Exception:
+    MOVIDESK_TOKEN = os.getenv("MOVIDESK_TOKEN", "")
+
+os.environ["MOVIDESK_TOKEN"] = MOVIDESK_TOKEN
+
 # Configuração da página
 st.set_page_config(page_title="Narwave AI", page_icon="🐋", layout="centered")
 aplicar_estilo_base()
 
-# Injetar CSS externo
 css_path = "styles.css"
 if os.path.exists(css_path):
     with open(css_path, encoding="utf-8") as f:
@@ -43,12 +51,10 @@ if os.path.exists(css_path):
 else:
     st.warning("Arquivo styles.css não encontrado.")
 
-# Estados da sessão
 for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", "ir_para_template_n2", "consulta_azure"]:
     if key not in st.session_state:
         st.session_state[key] = [] if key == "historico" else {} if key == "feedbacks_dados" else False
 
-# Expander para análise de imagem com contexto
 with st.expander("📸 Analisar com IA", expanded=False):
     col1, col2 = st.columns([0.7, 0.3])
     with col1:
@@ -94,7 +100,6 @@ with st.expander("📸 Analisar com IA", expanded=False):
 
                     st.session_state["consulta_azure"] = termo
 
-# Processamento separado do botão para Azure DevOps
 if st.session_state.get("consulta_azure"):
     if st.button("🔎 Buscar no Azure DevOps por este erro", key="buscar_erro_azure"):
         from azure_integration import buscar_work_items
@@ -107,6 +112,20 @@ if st.session_state.get("consulta_azure"):
         else:
             st.info("Nenhum card relacionado foi encontrado no Azure.")
         del st.session_state["consulta_azure"]
+
+    termo_movidesk = st.session_state.get("consulta_azure", "")
+    if st.button("🟦 Buscar no Movidesk por este erro", key="btn_movidesk"):
+        with st.spinner("Consultando Movidesk..."):
+            resultados = buscar_tickets_movidesk(termo_movidesk)
+
+        if resultados:
+            st.markdown("### Resultados encontrados:")
+            for ticket in resultados:
+                link = f"https://narwalsistemas.movidesk.com/Ticket/{ticket['id']}"
+                st.markdown(f'<a href="{link}" target="_blank" class="botao-movidesk">🔗 {ticket["subject"]}</a>', unsafe_allow_html=True)
+        else:
+            st.info("Nenhum chamado relacionado foi encontrado no Movidesk.")
+
 
 # Histórico de mensagens
 for idx, item in enumerate(st.session_state["historico"]):
@@ -163,19 +182,33 @@ if pergunta:
     })
     st.session_state["ultima_pergunta"] = pergunta.strip()
 
-# Integração com Azure DevOps
+# Integração com Azure DevOps e Movidesk
 if st.session_state.get("ultima_pergunta"):
+    termo_erro = st.session_state["ultima_pergunta"]
     with st.chat_message("assistant"):
-        if st.button("🔎 Buscar no Azure por este erro"):
+        if st.button("Buscar no Azure por este erro"):
             with st.spinner("Consultando Azure DevOps..."):
                 from azure_integration import buscar_work_items
-                resultados = buscar_work_items(st.session_state["ultima_pergunta"])
-            if resultados:
-                st.markdown("### Resultados encontrados:")
-                for item in resultados:
+                resultados_azure = buscar_work_items(termo_erro)
+            if resultados_azure:
+                st.markdown("#### Resultados encontrados no Azure:")
+                for item in resultados_azure:
                     st.markdown(f"🔗 [{item['title']}]({item['url']})")
             else:
                 st.info("Nenhum card relacionado foi encontrado no Azure.")
+
+        if st.button("Buscar no Movidesk por este erro", key="btn_movidesk_ultima"):
+            with st.spinner("Consultando Movidesk..."):
+                from movidesk_integration import buscar_tickets_movidesk
+                resultados_movidesk = buscar_tickets_movidesk(termo_erro)
+
+            if resultados_movidesk:
+                st.markdown("#### Resultados encontrados no Movidesk:")
+                for ticket in resultados_movidesk:
+                    st.markdown(f"🔗 [{ticket['subject']}](https://narwalsistemas.movidesk.com/Ticket/{ticket['id']})")
+            else:
+                st.info("Nenhum chamado relacionado foi encontrado no Movidesk.")
+
 
 # Novo menu lateral com toggle
 def alternar_menu():
