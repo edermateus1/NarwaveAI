@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c7ba0838-300d-4abd-ae0d-d7d48958a33c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +25,6 @@
   <ItemGroup>
     <Compile Include="analisar_print_com_ia.py" />
     <Compile Include="analytics.py" />
-    <Compile Include="app.py" />
     <Compile Include="azure_integration.py" />
     <Compile Include="base_conhecimento\analisar_template_n2.py" />
     <Compile Include="load_docs.py" />
