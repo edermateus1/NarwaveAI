@@ -56,9 +56,9 @@ for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", 
         st.session_state[key] = [] if key == "historico" else {} if key == "feedbacks_dados" else False
 
 with st.expander("📸 Analisar com IA", expanded=False):
-    col1, col2 = st.columns([0.7, 0.3])
+    col1, col2 = st.columns([0.1, 0.3])
     with col1:
-        imagem = st.file_uploader("Imagem com erro (print de tela)", type=["png", "jpg", "jpeg"], key="img_upload")
+        imagem = st.file_uploader("Imagem do erro (print de tela)", type=["png", "jpg", "jpeg"], key="img_upload")
     with col2:
         comentario = st.text_input("Descrição do erro", placeholder="Ex: ocorre ao salvar a nota...", key="comentario_input")
 
