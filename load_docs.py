@@ -8,6 +8,7 @@ import fitz  # PyMuPDF
 from PIL import Image
 import pytesseract
 import io
+import streamlit as st
 
 from langchain_community.document_loaders import (
     PyMuPDFLoader,
@@ -16,6 +17,8 @@ from langchain_community.document_loaders import (
 )
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
 
 # (Opcional) Configure manualmente o caminho do Tesseract se necessário
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -39,6 +42,7 @@ def carregar_documentos(caminhos):
     print(f"[DEBUG] Total de documentos carregados: {len(documentos)}")
     return documentos
 
+
 def carregar_arquivo(caminho):
     print(f"[DEBUG] Tentando carregar: {caminho}")
     documentos = []
@@ -52,17 +56,23 @@ def carregar_arquivo(caminho):
         elif caminho.endswith(".txt"):
             loader = TextLoader(caminho, encoding="utf-8")
             documentos = loader.load()
-        elif caminho.endswith(".json"):
+        elif caminho.endswith(".json") and 'env_vars' not in caminho:
+            # Carrega FAQs/manuais JSON
             with open(caminho, "r", encoding="latin-1") as f:
                 faqs = json.load(f)
                 for item in faqs:
-                    conteudo = f"Pergunta: {item['pergunta']}\nCausa: {item.get('causa', '')}\nSolução: {item.get('solucao', '')}"
+                    conteudo = (
+                        f"Pergunta: {item.get('pergunta', '')}\n"
+                        f"Causa: {item.get('causa', '')}\n"
+                        f"Solução: {item.get('solucao', '')}"
+                    )
                     doc = Document(page_content=conteudo, metadata={"source": "faq"})
                     documentos.append(doc)
     except Exception as e:
         print(f"[ERRO] Falha ao carregar '{caminho}': {e}")
 
     return documentos
+
 
 def carregar_pdf_com_ocr(caminho_pdf):
     try:
@@ -90,9 +100,39 @@ def carregar_pdf_com_ocr(caminho_pdf):
         print(f"[ERRO] Falha no OCR de '{caminho_pdf}': {e}")
         return []
 
+
 def dividir_documentos(docs):
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=100
     )
     return splitter.split_documents(docs)
+
+
+# -----------------------------------------------------
+# Índice semântico para Variáveis de Ambiente (manual)
+# -----------------------------------------------------
+
+@st.cache_resource(show_spinner=False)
+def load_env_vars_index(json_path: str = 'data/env_vars.json'):
+    """
+    Carrega o JSON de variáveis de ambiente manualmente e cria um índice FAISS.
+    Cada documento terá page_content = description e metadata com name, type e active.
+    """
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(f"Arquivo de variáveis não encontrado: {json_path}")
+    with open(json_path, encoding='utf-8') as f:
+        env_vars = json.load(f)
+    docs = []
+    for var in env_vars:
+        docs.append(Document(
+            page_content=var.get('description', ''),
+            metadata={
+                'source': 'env_var',
+                'name': var.get('name'),
+                'type': var.get('type'),
+                'active': var.get('active', False)
+            }
+        ))
+    embeddings = OpenAIEmbeddings()
+    return FAISS.from_documents(docs, embeddings)

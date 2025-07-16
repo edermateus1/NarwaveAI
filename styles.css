@@ -6,6 +6,14 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* Força transparência na toolbar (o topo) */
+[data-testid="stToolbar"],
+header[data-testid="stHeader"],
+.stAppToolbar {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 /* Fundo escuro unificado baseado no rodapé (#1e1f23) */
 html, body, .main, .block-container, .stApp,
 section.main > div,
@@ -39,23 +47,40 @@ div[class^="st-emotion-cache-hzygls"] {
 section[data-testid="stExpander"],
 section[data-testid="stExpander"] > div {
     background-color: #1e1f23 !important;
-    border: 1px solid #3e3f4b;
+    border: 1px solid #3c3f4b;
     border-radius: 8px;
 }
 
-/* Botão engrenagem e reprocessar */
+/* Expander “📸 Analisar com IA” */
+.st-emotion-cache-13na8ym.eah1tn11 > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #ececf1 !important;
+    transition: color 0.2s ease;
+}
+
+    .st-emotion-cache-13na8ym.eah1tn11 > summary:hover,
+    .st-emotion-cache-13na8ym.eah1tn11 > summary:focus-visible {
+        color: #2AB5E1 !important;
+    }
+
+    .st-emotion-cache-13na8ym.eah1tn11 > summary svg {
+        fill: #ececf1 !important;
+        transition: fill 0.2s ease;
+    }
+
+    .st-emotion-cache-13na8ym.eah1tn11 > summary:hover svg,
+    .st-emotion-cache-13na8ym.eah1tn11 > summary:focus-visible svg {
+        fill: #2AB5E1 !important;
+    }
+
+/* Botões gerais (gear, reprocessar etc.) */
+div[data-testid="stButton"] button,
 .botao-engrenagem div[data-testid="stButton"] button,
 .reprocessar-button div[data-testid="stButton"] button {
-    background-color: #3c3f50 !important;
-    color: white !important;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 18px;
-    border: none;
-}
-
-/* Botões gerais */
-div[data-testid="stButton"] button {
     background-color: #3c3f50 !important;
     color: white !important;
     border-radius: 8px !important;
@@ -65,12 +90,11 @@ div[data-testid="stButton"] button {
     transition: background-color 0.2s ease;
 }
 
-    /* Hover nos botões */
     div[data-testid="stButton"] button:hover {
         background-color: #505365 !important;
     }
 
-/* Chat bubble estilo ChatGPT */
+/* Chat bubbles */
 div[data-testid="chatMessageContent"] {
     background-color: #444654;
     padding: 14px;
@@ -79,39 +103,69 @@ div[data-testid="chatMessageContent"] {
     line-height: 1.6;
 }
 
-/* Área inferior - input */
+/* ───── ÁREA INFERIOR – INPUT STREAMLIT ───── */
+
+/* Remove wrapper externo e padding */
+div[data-testid="stChatInput"],
 .stChatInputContainer,
 section.main > div:nth-last-child(1),
-section[data-testid="stChatInput"],
 section[data-testid="chatInput"] {
-    background-color: #1e1f23 !important;
-    box-shadow: none !important;
-    border-top: 1px solid #3e3f4b !important;
-    padding: 16px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
 }
 
-    /* Textarea */
-    .stChatInputContainer textarea {
-        background-color: #40414f !important;
-        color: #ececf1 !important;
-        border: none !important;
-        border-radius: 8px !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important;
+/* Remove qualquer borda interna */
+div[data-baseweb="textarea"],
+div[data-baseweb="base-input"] {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+/* Estilo do “balão” interno */
+div[data-baseweb="base-input"] {
+    background-color: #40414f !important;
+    padding: 12px 16px !important;
+}
+
+/* Placeholder e textarea */
+textarea[data-testid="stChatInputTextArea"] {
+    background: transparent !important;
+    color: #ececf1 !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+    textarea[data-testid="stChatInputTextArea"]::placeholder {
+        color: #8e8ea0 !important;
     }
 
-        /* Placeholder */
-        .stChatInputContainer textarea::placeholder {
-            color: #8e8ea0 !important;
-        }
+/* Botão de envio */
+div[data-testid="stChatInput"] button[kind="icon"] {
+    background-color: #1e1f23 !important;
+    border: 1px solid #565869 !important;
+    color: #ececf1 !important;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
+}
 
-    /* Botão de envio */
-    .stChatInputContainer button[kind="icon"] {
-        background-color: #1e1f23 !important;
-        border: 1px solid #565869 !important;
-        color: #ececf1 !important;
-        border-radius: 8px !important;
-        padding: 10px 16px !important;
+/* ─── CHAT INPUT: apenas azul no foco (sem borda transparente em repouso) ─── */
+.st-emotion-cache-x1bvup.e1togvvn1 {
+    /* sem borda padrão */
+    border: none !important;
+    transition: border-color 0.2s ease !important;
+}
+
+    .st-emotion-cache-x1bvup.e1togvvn1:focus-within {
+        /* só no foco aparece a borda azul */
+        border: 2px solid #2AB5E1 !important;
+    }
+
+    .st-emotion-cache-x1bvup.e1togvvn1 textarea:focus {
+        outline: none !important;
     }
 
 /* Footer */
@@ -121,7 +175,7 @@ footer, footer * {
     box-shadow: none !important;
 }
 
-/* Alerta de template N2 detectado */
+/* Alerta template N2 */
 .n2-alert {
     background-color: #2b2c33;
     border-left: 4px solid #f39c12;
@@ -131,6 +185,7 @@ footer, footer * {
     font-size: 15px;
     color: #f1c40f;
 }
+
 /* Botão Movidesk */
 .botao-movidesk {
     background-color: #2D7EF7;
@@ -150,3 +205,313 @@ footer, footer * {
     .botao-movidesk:hover {
         background-color: #1f5fc7;
     }
+/* ─── Faz o wrapper do chat input ter o mesmo fundo do balão ─── */
+.st-emotion-cache-x1bvup.e1togvvn1 {
+    background-color: #40414f !important; /* mesmo fundo do base-input */
+    padding: 12px 16px !important; /* garante o padding interno */
+    border-radius: 8px !important; /* mantém as bordas arredondadas */
+}
+
+    /* Garante que o <textarea> interno fique transparente */
+    .st-emotion-cache-x1bvup.e1togvvn1 textarea {
+        background: transparent !important;
+    }
+/* ─── Ajuste do formato “pill” do chat input ─── */
+/* 1) Deixa o wrapper completamente arredondado */
+.st-emotion-cache-x1bvup.e1togvvn1 {
+    border: none !important;
+    background-color: #40414f !important; /* mesmo fundo do balão */
+    border-radius: 999px !important; /* shape pill */
+    padding: 12px 16px !important; /* mantém o padding interno */
+    transition: border-color 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+    /* 2) Quando focado, mantém o pill shape e aplica a borda azul */
+    .st-emotion-cache-x1bvup.e1togvvn1:focus-within {
+        border: 2px solid #2AB5E1 !important;
+        border-radius: 999px !important;
+    }
+
+    /* 3) Remove outline residual do <textarea> interno */
+    .st-emotion-cache-x1bvup.e1togvvn1 textarea:focus {
+        outline: none !important;
+    }
+/ /* ─── Correção do hover do botão de enviar para azul Narwave ─── */
+/* Usa o data-testid para garantir o override correto */
+.st-emotion-cache-1joqliy.e1togvvn2 button[data-testid="stChatInputSubmitButton"]:hover {
+    background-color: #2AB5E1 !important;
+    border-color: #2AB5E1 !important;
+}
+
+/* Garante que o ícone SVG fique branco no hover */
+.st-emotion-cache-1joqliy.e1togvvn2 button[data-testid="stChatInputSubmitButton"]:hover svg {
+    fill: white !important;
+}
+/* ─── Envia botão azul no hover — só o próprio botão, não o wrapper ─── */
+/* .st-emotion-cache-1joqliy.e1togvvn2 é a classe DO BOTÃO em si */
+.st-emotion-cache-1joqliy.e1togvvn2:hover {
+    background-color: #2AB5E1 !important;
+    border-color: #2AB5E1 !important;
+}
+
+    /* garante que o ícone vire branco */
+    .st-emotion-cache-1joqliy.e1togvvn2:hover svg {
+        fill: white !important;
+    }
+/* ─── Botão de envio azul no hover ─── */
+/* Aplica sobre o botão dentro do wrapper st-emotion-cache-sey4o0.e1togvvn3 */
+.st-emotion-cache-sey4o0.e1togvvn3 .st-emotion-cache-1joqliy.e1togvvn2:hover {
+    background-color: #2AB5E1 !important;
+    border-color: #2AB5E1 !important;
+}
+
+    /* Garante que o SVG do arrow fique branco no hover */
+    .st-emotion-cache-sey4o0.e1togvvn3 .st-emotion-cache-1joqliy.e1togvvn2:hover svg {
+        fill: white !important;
+    }
+
+/* ─── Override botão Enviar: transparente padrão + azul no hover ─── */
+.st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"] {
+    /* tranpa­rente em repouso */
+    background-color: transparent !important;
+    border: 1px solid #565869 !important;
+    color: #ececf1 !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+    /* hover: fundo e borda azuis, ícone branco */
+    .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"]:hover {
+        background-color: #2AB5E1 !important;
+        border-color: #2AB5E1 !important;
+        color: white !important;
+    }
+
+    /* faz o SVG herdar a cor do texto (currentColor) */
+    .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"] svg {
+        fill: currentColor !important;
+    }
+    /* ─── Faz só o ícone herdar currentColor no hover ─── */
+    .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"] svg {
+        /* garante que o SVG use a cor do botão */
+        fill: currentColor !important;
+    }
+
+    /* ─── No hover: cor do texto (e do SVG) fica azul Narwave, sem alterar o fundo ─── */
+    .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"]:hover {
+        /* transparência no fundo */
+        background-color: transparent !important;
+        /* mantém ou redefine a borda como quiser; aqui removemos a borda */
+        border: none !important;
+        /* cor do texto e ícone */
+        color: #2AB5E1 !important;
+    }
+/* ─── Remove a faixa escura entre o chat e o botão ─── */
+/* 1) Faz o wrapper do botão herdar o fundo do balão */
+.st-emotion-cache-sey4o0.e1togvvn3 {
+    background-color: #40414f !important; /* mesmo tom do restante do balão */
+    border: none !important;
+}
+
+    /* 2) E também o próprio botão, para não pintar com cor diferente */
+    .st-emotion-cache-sey4o0.e1togvvn3 button,
+    .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"] {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+        /* 3) Mantém o ícone no hover azul sem alterar o fundo */
+        .st-emotion-cache-sey4o0.e1togvvn3 [data-testid="stChatInputSubmitButton"]:hover {
+            color: #2AB5E1 !important;
+        }
+/* ─── “Descrição do erro”: mantém formato original + borda azul ao focar ─── */
+
+/* 1) Restaura o container BaseWeb ao estilo padrão (rectangular) */
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 > div[data-baseweb="base-input"] {
+    /* Formato retangular com cantos arredondados leves */
+    border: 1px solid #565869 !important;
+    border-radius: 8px !important;
+    background-color: transparent !important;
+    padding: 8px 12px !important;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease !important;
+}
+
+/* 2) Remove qualquer outro override de “pill shape” */
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+    /* 3) Input interno sem outline ou bordas extras */
+    .stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 input {
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        color: #ececf1 !important;
+        width: 100% !important;
+    }
+
+    /* 4) Borda azul Narwave somente quando o campo estiver em foco */
+    .stTextInput.st-emotion-cache-79elbk.e1o1zy6o0:focus-within > div[data-baseweb="base-input"] {
+        border: 2px solid #2AB5E1 !important;
+    }
+/* ─── “Descrição do erro”: borda cinza em repouso + azul no foco ─── */
+
+/* 1) Borda cinza padrão, sobrepondo o vermelho */
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 > div[data-baseweb="base-input"] {
+  border: 1px solid #565869 !important;
+}
+
+/* 2) Remove qualquer outline/borda vermelha do próprio <input> */
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 input:focus,
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0 input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 3) Só no foco do wrapper: pinta a borda de azul */
+.stTextInput.st-emotion-cache-79elbk.e1o1zy6o0:focus-within > div[data-baseweb="base-input"] {
+  border-color: #2AB5E1 !important;
+}
+/* ─── Neutraliza as bordas vermelhas internas do BaseWeb “input error” ─── */
+.st-emotion-cache-79elbk.e1o1zy6o0 .st-cc,
+.st-emotion-cache-79elbk.e1o1zy6o0 .st-cb,
+.st-emotion-cache-79elbk.e1o1zy6o0 .st-ca,
+.st-emotion-cache-79elbk.e1o1zy6o0 .st-c9 {
+    border-color: transparent !important;
+}
+
+/* ─── Aplica borda cinza padrão no container em repouso ─── */
+.st-emotion-cache-79elbk.e1o1zy6o0 > div[data-baseweb="base-input"] {
+    border: 1px solid #565869 !important;
+}
+
+/* ─── Remove outline/borda do <input> em foco ─── */
+.st-emotion-cache-79elbk.e1o1zy6o0 input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ─── Pinta a borda do container interno de azul só no foco ─── */
+.st-emotion-cache-79elbk.e1o1zy6o0:focus-within > div[data-baseweb="base-input"] {
+    border-color: #2AB5E1 !important;
+}
+/* ─── “Browse files”: transparente em repouso + borda e texto azuis no hover ─── */
+.st-emotion-cache-z8vbw2.e1e4lema2 {
+    background-color: transparent !important; /* sem preenchimento */
+    border: 1px solid #565869 !important; /* borda cinza padrão */
+    color: #ececf1 !important; /* texto cinza */
+    transition: border-color 0.2s ease, color 0.2s ease !important;
+}
+
+    /* Hover: só muda a cor da borda e do texto, sem preencher */
+    .st-emotion-cache-z8vbw2.e1e4lema2:hover {
+        background-color: transparent !important; /* mantém transparente */
+        border-color: #2AB5E1 !important; /* borda azul Narwave */
+        color: #2AB5E1 !important; /* texto/ícone azul Narwave */
+    }
+
+    /* Garante que qualquer SVG herde currentColor (azul no hover) */
+    .st-emotion-cache-z8vbw2.e1e4lema2 svg {
+        fill: currentColor !important;
+    }
+.stAlert {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+/* ─── Estilo moderno para botões do menu lateral ─── */
+.menu-lateral-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+    .menu-lateral-wrapper button {
+        width: 90%;
+        border-radius: 10px;
+        background-color: #2AB5E1 !important; /* Azul Narwave */
+        color: #ffffff !important;
+        border: none !important;
+        font-size: 15px !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+        .menu-lateral-wrapper button:hover {
+            background-color: #219ac7 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Ícones dentro dos botões herdando a cor branca */
+        .menu-lateral-wrapper button svg {
+            fill: #ffffff !important;
+        }
+/* Botões do menu lateral com visual moderno */
+.menu-lateral-wrapper button[data-testid="stBaseButton-secondary"] {
+
+    width: 100%;
+    border-radius: 8px !important;
+    background-color: #2AB5E1 !important; /* Azul Narwave */
+    color: #ffffff !important;
+    border: none !important;
+    font-size: 14px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15) !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+    margin-bottom: 10px !important;
+}
+
+    button[data-testid="stBaseButton-secondary"]:hover {
+        background-color: #249cc0 !important;
+        transform: translateY(-2px);
+    }
+
+    button[data-testid="stBaseButton-secondary"] p {
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #ffffff !important;
+        text-align: center !important;
+    }
+
+    /* Centraliza ícones dentro dos botões */
+    button[data-testid="stBaseButton-secondary"] svg {
+        fill: #ffffff !important;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+/* ─── Estilo moderno para botões do menu lateral ─── */
+.menu-lateral-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+    .menu-lateral-wrapper button {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #2AB5E1 !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-size: 15px !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+        .menu-lateral-wrapper button:hover {
+            background-color: #219ac7 !important;
+            transform: translateY(-2px);
+        }
+
+        .menu-lateral-wrapper button svg {
+            fill: #ffffff !important;
+        }
+

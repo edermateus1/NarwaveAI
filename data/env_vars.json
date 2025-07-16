@@ -1,0 +1,3608 @@
+[
+  {
+    "name": "MV_TAMTITIINV",
+    "description": "Tamanho do campo Numero do título na tela de Invoice",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "MV_IMPCUSSD",
+    "description": "Ao calcular impostos abrirá o relatorio de custos em dolares",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "MV_TPDESPPROIMP",
+    "description": "Retorno do auto complete de Tipo de Despesa na tela de nova despesa",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "MV_PRODPROIMP",
+    "description": "Retorno do auto complete de Produto na tela de item processo",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DESPPAGAINI",
+    "description": "Ao Inserir uma nova despesa, trazer como padrão a informada no parâmetro",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARNCM",
+    "description": "Ativar o Job que integra/atualiza os Ncm's",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIADESPESA",
+    "description": "Ativar a criação da despesa da Narwal automaticamente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TAMCHARCLASS",
+    "description": "Quatidade de caracteres máximo para as colunas Classificação entrada e saída",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_PRECLASSIFICA",
+    "description": "Obriga pré classificação do processo para geração da nota fiscal.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EMLSMTP",
+    "description": "Host SMTP.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_EMLSMTPPORT",
+    "description": "Porta de comunicação SMTP.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_EMLEND",
+    "description": "E-mail de configuração.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_EMLPAS",
+    "description": "Senha do e-mail de configuração.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVFOL",
+    "description": "Envia FollowUp.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLEMLFROM",
+    "description": "E-mail From para uso no envio de FollowUp.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLEMLBCC",
+    "description": "E-mails para uso no envio de FollowUp. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLINTEMLBCC",
+    "description": "E-mails para uso no envio de FollowUp Interno. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLCREMLBCC",
+    "description": "E-mails para uso no envio de FollowUp de Cotação Rodoviário. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLCMEMLBCC",
+    "description": "E-mails para uso no envio de FollowUp de Cotação Maritimo. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLPGEMLBCC",
+    "description": "E-mails para uso no envio de FollowUp de Presença de Carga. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_URLEXT",
+    "description": "Url de endereço de acesso.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_MANTRANETID",
+    "description": "Código de usuário referente ao cadastro do Mantranet",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_MANTRANETSENHA",
+    "description": "Senha de usuário referente ao cadastro do Mantranet",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_MANTRANETAVISO",
+    "description": "E-mails para recebimento da presença de carga. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAODOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOSISCDOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos SISCOSERV.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOPEDCOMPDOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos PEDIDO COMPRA.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOPEDVENPDOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos PEDIDO VENDA.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOLOGNACDOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos LOGISTICA NACIONAL.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_INVOICETITAUT",
+    "description": "Faz com que o campo titulo invoice seja preenchido automaticamente ao digitar o número da invoice.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "MV_AUCFIL",
+    "description": "Retorno do auto complete da filial",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVFOL_INTERVAL",
+    "description": "Intervalo de tempo do Job para enviar os follows",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "MV_IMPRASCDI",
+    "description": "Após Gerar a DI, Imprimir o Rascunho da declaração de Importação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAR_NALADI",
+    "description": "Ativar o Job que integra/atualiza os Naladi's",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAR_NVE",
+    "description": "Ativar o Job que integra/atualiza os Nve's",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FECHAFINANC",
+    "description": "Ativar integração do Fechamento Financeiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLFECFINEMLBCC",
+    "description": "E-mails para uso no envio de FollowUp de Fechamento Financeiro. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLBAXNUMEMLOPE",
+    "description": "E-mails para envio de FollowUp baixa numerário. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLBAXNUMEMLDES",
+    "description": "E-mails para envio de FollowUp baixa numerário p/ despachante próprio. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PREFINPERC",
+    "description": "Percentual de margem utilizada no relatório de Previsão Financeira.",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_FECHAFINANCFORN",
+    "description": "Ativar o campo fornecedor no Fechamento Financeiro.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVFOLANEXDOC",
+    "description": "Ativar o Envio de follow up ao anexar documentos, por outro usuario.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_MINQTDDOC",
+    "description": "Quantidade mínima de documentos no processo de importação para emissão de nota fiscal.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_EXIBEPRINCING",
+    "description": "Exibe coluna princing na tela de Simulação de Importação.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_SMTPSSL",
+    "description": "Utiliza SSL na conexão de envio de email",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_ENVIAPRTOTVS",
+    "description": "Envia titulo provisório para Totvs na simulação de importação",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_QTDCHARNF",
+    "description": "Quantidade de digitos permitidos no campo NF.",
+    "type": "Int",
+    "active": false
+  },
+  {
+    "name": "NWL_QTDDIAPREV",
+    "description": "Quantidade de dias para previsionar frete e outras despesas.",
+    "type": "Int",
+    "active": false
+  },
+  {
+    "name": "NWL_AGRDESPPREV",
+    "description": "Agrupar as despesas para integração da previsão de despesas.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_DOWNAVIO",
+    "description": "URL para download do arquivo de integração de navios.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_UPNAVPRO",
+    "description": "Atualização de Navios dos Processos após integração.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_INTSISCARGA",
+    "description": "Integração de processos do siscarga.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_FOLDDICI",
+    "description": "Pasta de destino extrato DI e CI baixado automaticamente pelo sistema.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_SERATUNAV",
+    "description": "Autorizar atualização de Navios no Job.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_DECCASPRO",
+    "description": "Número de casas decimais utilizadas na tela de processo.",
+    "type": "Int",
+    "active": false
+  },
+  {
+    "name": "NWL_INTSITDI",
+    "description": "Integração de situação DI.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_EMLDESEMT",
+    "description": "E-mail para informativo de desembaraço interrompido. Utilizar ';' como separador.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PROPCOMER",
+    "description": "Nome do relatório de proposta comercial.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_INTMANTRA",
+    "description": "Atualiza presença de carga (MANTRA).",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_SENIORPREVCODTPTITPAG",
+    "description": "Senior -> Código PREVISTO do tipo do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORPREVCODFORTITPAG",
+    "description": "Senior -> Código PREVISTO do fornecedor do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORPREVCODTRANORGTITPAG",
+    "description": "Senior -> Código PREVISTO da transação origem do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIOREFETCODTPTITPAG",
+    "description": "Senior -> Código EFETIVO do tipo do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIOREFETCODFORTITPAG",
+    "description": "Senior -> Código EFETIVO do fornecedor do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIOREFETCODTRANORGTITPAG",
+    "description": "Senior -> Código EFETIVO da transação origem do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORCODPORTITPAG",
+    "description": "Senior -> Código do portador do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORCODCARTTITPAG",
+    "description": "Senior -> Código da carteira do título a pagar.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIARIMPOSTOSNOTA",
+    "description": "Enviar impostos na nota (caso não será enviado no registro da Di)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SEQUENCIALPRODUTO",
+    "description": "Código para a chave sequencial do produto",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOEXPDOCS",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos (Exportação).",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_BOOKINGSENDERID",
+    "description": "SenderID para envio do booking para o inttra.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DIASEXPCOTACAO",
+    "description": "Dias para expiracao da cotação de frete.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_INTINTTRA",
+    "description": "Habilita integracao INTTRA",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PRODINTTRA",
+    "description": "Habilita ambiente produção INTTRA (0 - Homologação 1- Produção)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_PRODNFDESP",
+    "description": "Produto a ser enviado ao ERP quando a Nota fiscal de despesa não ratear os produtos",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DESNFSEMA",
+    "description": "Exibe a coluna de semáforo para Despesas de Nota Fiscal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARCONTASPAGAR",
+    "description": "Ativa o módulo financeiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTSISCOSERV",
+    "description": "Ativa integração retorno de lotes SISCOSERV",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBRIGADATACOLETA",
+    "description": "Obriga a informação da data de coleta quando o incoterm do processo for EXW",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_WAREHOUSEORIGEM",
+    "description": "Habilita controle de warehouse na origem",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITARCEST",
+    "description": "Habilita controle de Cest",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SELDATAFATURAMENTO",
+    "description": "Seleciona a data para faturamento: 0 - DataRegistroDi  1 - DataNotaFiscalEntrega  ",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRACAODRAWBACK",
+    "description": "Integração de Atos concessórios Drawback",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TEMPLDANFE",
+    "description": "Caminho armazenamento nota fiscal de saída",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_BLOQUEIARELCUSTO",
+    "description": "Bloquear emissão do relatório de Custo conta e ordem e Importação própria",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SCHEMASNFE",
+    "description": "Caminho onde está armazenados os schemas da NFe",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDNFEENTRADA",
+    "description": "Caminho armazenamento nota fiscal de entrada",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDNFESAIDA",
+    "description": "Caminho armazenamento nota fiscal de saída",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRASAP",
+    "description": "Url integrador SAP",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PORTALAPI",
+    "description": "Url Portal.API",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAPOSNAVIO",
+    "description": "Habilita a consulta das posições dos navios",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FILIALWS",
+    "description": "Utiliza filial como parâmetro de consulta do Web Service",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRAFOLLOW",
+    "description": "Habilita a integração dos follows dos armadores",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAFOLLOWRAS",
+    "description": "Habilita o envio de follows com informações de RAS e RP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLLOWNOVOPROCESSO",
+    "description": "Habilita o envio de follows aos responsaveis quando um novo processo é aberto",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIADESSEGURO",
+    "description": "Habilita criação automática de despesas: Despesa de Seguro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIADESPFRETE",
+    "description": "Habilita criação automática de despesas: Despesa de Frete",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXPODESPCRIAFIN",
+    "description": "Habilita criação contas a pagar na Previsão de despesa da Exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SELDATAFATURAMENTOEXPO",
+    "description": "Seleciona a data para faturamento da exportação: 0 - DataEmbarque 1 - DataEnvioOriginais",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_PEDCOMFLUXO",
+    "description": "Quantidade de dias para aviso ao fluxo de caixa para o Pedido de compra",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_SIMULASAPROD",
+    "description": "Ativar pesquisa do produto na simulação de importação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HONORARIOFCH",
+    "description": "Calcular os honorários ao processar os requisitos do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PASTAAPROVACOTACAO",
+    "description": "Nome da pasta para armazenar o documento de cotação aprovado",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DIASAVISAMANTRA",
+    "description": "Quantidade de dias de aviso do vencimendo da senha do mantra",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_EXIBEPRDANUENTES",
+    "description": "Na geração da LI exibe somente produtos anuentes",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTTRAEXCLUIRARQUIVO",
+    "description": "Track&Trace Excluir arquivos ao fim da leitura",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTTRATRACKTRACE",
+    "description": "Realiza a integração do Track & Trace",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDLI",
+    "description": "Pasta de destino extrato LI baixado automaticamente pelo sistema.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SALVALI",
+    "description": "Salva extrato da LI quando: 0 - Nunca, 1 - No registro, 2 - No deferimento, 3 - Ambos.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_HEALTHCARE",
+    "description": "Habilita abertura de chamados do sistema.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRACECOMO",
+    "description": "Ao integrar o XML da DI a taxa do CE mercante irá integrar como:",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_NATUCOMIS",
+    "description": "Natureza de operação a ser considerada para calcular a comissão da exportação",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_NATUTXBANC",
+    "description": "Natureza de operação a ser considerada para calcular as taxas bancárias da exportação",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_TOKENCONSULTANFE",
+    "description": "Token para consultar nfe na Roveri.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DEFDATAFIN",
+    "description": "Opção padrão da seleção do campo Data base futuro para exportação",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_DEFFILTPOS",
+    "description": "Opção padrão do campo Posição do processo na tela de filtros do processo",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLLOWMAPA",
+    "description": "Habilita criação do follow de mapa na importação.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLLOWLIBERACAOEMBARQUE",
+    "description": "Habilita criação do follow de Liberação conhecimento de Embarque.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SISCOMEXATIVARPRODUCAO",
+    "description": "Ativar envio da Due para PRODUÇÃO.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARJOBCONSUTADUESISCOMEX",
+    "description": "Ativar Job de Consulta DU-E no Siscomex.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAAUTOSISCARGA",
+    "description": "Ativa atualização automatica do processo pelo siscarga.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENCERRAPROCESSO",
+    "description": "Encerra processo de importação ao gerar a nota fiscal.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESPFAT",
+    "description": "Lista de despesas (Separadas por virgula) que compõe o faturamento.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLLOWLIPRAZO",
+    "description": "Dias para envio de aviso de vencimento da licença de importação",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_AFRMMCE",
+    "description": "Considerar a taxa do ce mercante para o calculo da AFRMM",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZADTREGISTRO",
+    "description": "Utilizada data de registro da DI como base para pesquisa na painel",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SOLCITAMOTIVO",
+    "description": "Solicita motivo da alteração do ETD ou ETA na importação e exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_LINKAPINARWAL",
+    "description": "Link da API da Narwal",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARJOBNFSE",
+    "description": "Ativar Serviço de Atualização/Envio NFSe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FILTRAPEDCP",
+    "description": "Filtrar somente os titulos vinculados a PO Contas a Pagar",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TIMEOUTNOTA",
+    "description": "Time Out em Minutos para envio da Nota Fiscal",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_RECIMPDIVCFOP",
+    "description": "Habilita a divisão de notas no recebimento de importacao pelo CFOP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_RECIMPDIVQTD",
+    "description": "Habilita a divisão de notas no recebimento de importacao por quantidade",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ADICAOAMOSTRA",
+    "description": "Habilita a divisão de adições por amostra na invoice",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ADICAOAEXCECAO",
+    "description": "Habilita a divisão de adições por exceção fiscal do item",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_COMPOEDESCRICAOPARADI",
+    "description": "Habilita a composição do codigo do produto com a descricao do produto",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIATAXADOCEREAIS",
+    "description": "Habilita o envio da taxa do CE mercante sempre em reais para o Siscomex",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_AMBIENTEGATEWAYPRODUCAO",
+    "description": "Habilita o ambiente de produção Gateway para NFSe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_LINKJOBAPI",
+    "description": "Link da API JOB da Narwal",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_CODDESPCONFECCAOLI",
+    "description": "Codigo da despesa para confecção da Li",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_CODDESPANUENCIALI",
+    "description": "Codigo da despesa para anuencia da Li",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_RATEIOPESOINLAND",
+    "description": "Tipo de rateio Inland por peso",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_BANDEIRAMARITMODI",
+    "description": "Buscar bandeira para DI (0 - Navio, 1 - Armador)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDRE",
+    "description": "Pasta para salvar os documentos da RE",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_LINKITENSCONTAINER",
+    "description": "Habilita o cadastro de container com link aos itens do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_RECHACAIMPO",
+    "description": "Possibilitar rechaçar um processo de importação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARNOVORELATORIOCUSTOMERCADO",
+    "description": "Habilita o o novo relatório de custo de mercado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALMERC",
+    "description": "Controla valor de mercado nos itens do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXIBIRNOMECNPJCLIENTE",
+    "description": "Auto complete Cliente: Exibir o CNPJ junto ao Nome",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXIBIRNOMECNPJIMPORTADOR",
+    "description": "Auto complete Importador: Exibir o CNPJ junto ao Nome",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTROLAMULTALI",
+    "description": "Controla o lançamento da multa de li no processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERCMULTALI",
+    "description": "Percentual da multa de li sobre o valor aduaneiro",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_PERCDESCMULTALI",
+    "description": "Percentual de desconto sobre a multa de li",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_VALMINMULTALI",
+    "description": "Valor mínimo para multa da LI",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_VALMAXMULTALI",
+    "description": "Valor maximo para a multa de LI",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARATRIBUTONCM",
+    "description": "Ativar o Job que integra/atualiza os Atributos dos Ncm's",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERGUNTASAIRPROCESSO",
+    "description": "Botão de fechar ou voltar, perguntar se deseja realmente voltar/sair das telas de processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRPOPORIDIOMA",
+    "description": "Ativa tela que solicita o Idioma da PO a ser impressa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRNOVOFECHAMENTOFINANCEIRO",
+    "description": "Ativa o novo relatório de fechamento financeiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CALCULODESPACHOVALORADUANEIRO",
+    "description": "calcula o valor do despacho pelo valor aduaneiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DIVIDEFORNE",
+    "description": "Divisão da nota fiscal pelo fornecedor do item",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CANCLIINTEGRADA",
+    "description": "Cancelar LI no SISCOMEX",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PEDVENDEXP",
+    "description": "Utilizar pedido de venda para exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARDEBUG",
+    "description": "Ativa gravação do log do item processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PATHDEBUG",
+    "description": "Caminho para gravar o arquivo de log debug",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DESPNAOINFODI",
+    "description": "Parametro para despesa não Informada na DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UNINFDESP",
+    "description": "Parametro para unico item nota fiscal despesa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APROVAPEDCOMP",
+    "description": "Aprovação do Pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PREVIAINTEGRADESP",
+    "description": "Permitir visualizar e selecionar despesas (Fechamento Financeiro e Numerario) via txt",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TIPONFTRANSITO",
+    "description": "Tipo padrão para nota de transito 0= Entrada 1=Saída",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ZERDESPTRANS",
+    "description": "Habilita zerar despesas nota fiscal de transito",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_RELFLWNOVPROC",
+    "description": "Relatório para enviar no follow do novo processo",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_RATEIOSEGUROVMCV",
+    "description": "Rateia o Seguro pelo VMCV se = 1, VMLE se = 2 e Rateio Padrão se = 0 nos incoterms EXW, FCA, FAS, FOB, CFR, CPT",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTROLASAVEADICAO",
+    "description": "Marcar linha da grade de Adição da DI quando não salva pela primeira vez",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARNOVORELREGISTRADO",
+    "description": "Ativar novo relatório de processos registrados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTROLAMAPA",
+    "description": "Ativar Controle de Mapa no processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HISTADICAO",
+    "description": "Ativar Histórico de adição para restaurar dados após cancelamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TOLERANCIADIFPESOADICAO",
+    "description": "Tolerância da diferença entre o peso liquido e o peso informado das adições",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIARNUMERARIODESPESAFOBCIF",
+    "description": "Criar as Despesas de FOB e CIF nos numerários.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MODALIDADEIMPORTACAO",
+    "description": "Sugerir Modalidade Importação. Informe: (I=Impo.Propria) (E= Encomenda) (C=Conta Ordem)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PROCESSODESABTHCCEINTEGXMLDI",
+    "description": "Desabilita integração das despesas de TAXA CE e THC na integração do XML da DI no processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESTACARFRETENOTAFISCALENTRADA",
+    "description": "Destacar Frete na nota fiscal de entrada para processo CPT",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIADESICMS",
+    "description": "Habilita criação automática de despesas: Despesa de ICMS",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIADESANTIDUMPING",
+    "description": "Habilita criação automática de despesas: Despesa de AntiDumping",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERGUNSALVARASCDI",
+    "description": "Habilita a pergunta se deseja salvar o rascunho da DI na gestao de documentos",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSUTADIREGISTRADAIMPORTADOR",
+    "description": "Consulta DIs Registradas No Siscomex por Importador",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAFECHAMENTORESULTANTE",
+    "description": "Envia fechamento resultante na integração do ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ALLOGTRACKTRACE",
+    "description": "Realiza a integração do Track & Trace Allog",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_GERARDESPESATAXMOEDA",
+    "description": "Obrigar informar taxa da moeda ao gerar arquivo da despesa do despachante",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_BLOQALTITEMPROCESSODI",
+    "description": "Bloqueia a alteração dos campos que participam do agrupamento da DI após a mesmo gerada",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TIPOFRETENFENTRADA",
+    "description": "Tipo do frete na nota fiscal de entrada",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "MV_IMPORTAUTOCOMPLETE",
+    "description": "Auto Complete Importador Nome, NomeCnpj, NumeroDocumento",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_OPCOESPADRAOINTEGRARXMLDI",
+    "description": "Define quais as opções serão trazidas por padrão na integração do XML da DI",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_CARACTERSEPARACAO",
+    "description": "Define o caracter de separação do código para descrição na integração de arquivos",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPSISCOSERVIMPORTADORPROPRIO",
+    "description": "Permite Automatizar o siscoserv para importadores sem cliente e contrato de comissão",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ACEITADIFERECAFRETENEGATIVA",
+    "description": "Permite a geração automática da difereça de frete negativa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARENVIOCARTACAMBIOAUTO",
+    "description": "Ativar envio automatico da carta de câmbio",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NUMPROCESSOABA",
+    "description": "Mostra o número do processo na aba quando editando",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTROLAULTMADICAO",
+    "description": "Destaca na tela a última adição editada",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALORINICIALREMOCAODTADTC",
+    "description": "Define qual valor inicial do campo Remoção(DTA/DTC) no processo (0- Nâo, 1- Sim, 2- Indefinido)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARINTEGRACAOSENIOR",
+    "description": "Ativar/Desativa integração Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARBAIXAESTORNOTITULOSSENIOR",
+    "description": "Ativar a Baixa/Estorno de titulos financeiros quando ERP for Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OPCAOPAGOPORDESPESA",
+    "description": "Opção frete pago por na aba despesas 0-Não informado 1-Despachante 2-Importador 3-Cliente",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_VISUALIZASEMAFOROPEDIDOCOMPRA",
+    "description": "Visualizar Semaforo pedido compra!",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DIFICMSPELOVALOR",
+    "description": "Calcula o diferimento do ICMS pelo valor do ICMS cheio(quando desmarcado, calcula pela base)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABFLWRECORRENTE",
+    "description": "Habilita a integração dos follows recorrentes",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CAMPOINTRXMLDI",
+    "description": "Campo que será utilizado para a associação do produto na integração do XML da DI no processo",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SEPINTRXMLDI",
+    "description": "Caracter que separa o valor de associação com o produto na integração do XML da DI no processo",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVTITANTCTOTVS",
+    "description": "Habilita/Desabilita o envio de títulos antecipados para o Protheus",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_BLOQUEIATXTDESPESAOUTRAREF",
+    "description": "Bloquear arquivo txt despesas em processos diferentes do aquivo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DIASPRAZODEREGISTROSISCOSERV",
+    "description": "Dias para o prazo previsto de registro no siscoserv.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSULTACOMPLETADUE",
+    "description": "Consulta completa Due no siscomex.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDNCMSISCARGREGDI",
+    "description": "Valida NCMs dos itens do processo com o siscarga para registro da DI.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUPAISPOSNAVIO",
+    "description": "Ativa a atualização do país do navio na busca pela geolocalização.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABPETICAOLI",
+    "description": "Habilita/Desabilita relatório de petição da LI.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CRIARDESPESAMARKUP",
+    "description": "Cria despesa de markup no calculo do numerário.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLJOBMANTRA",
+    "description": "URL JOB MANTRA",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZATAXASNCMEXTARIFARIO",
+    "description": "Atualiza taxas nas adições conforme extarifário selecionado.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAXMLDIQUANDO",
+    "description": "Envia Xml da DI no momento do desembaraço da DI (0 - Não envia | 1 - Envia no download da CI | 2 - Envia no registro | 3 - Envia nos dois momentos)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_PREPAIDICMS",
+    "description": "Habilita/Desabilita o desconto do acrescimo prepaid da base do ICMS",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NFEENTRPISCONFSAIDA",
+    "description": "Hab./Desab. mostrar valores de PIS e COFINS de entrada na informação complementar da NFE de Saida",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAGERARLIPEDIDOCOMPRA",
+    "description": "Hab./Desab. a geração da LI a partir do pedido de compra!",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DIFBRUTOXLIQUIDO",
+    "description": "Tolerância de diferença entre o peso liquido e bruto na análise da DI",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_AGRUPARIMPOSTOSDI",
+    "description": "Gera um unico titulo par aos impostos da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLLINKSISCOMEX",
+    "description": "URL API SISCOMEX",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ALTERALEVELLOG",
+    "description": "Altera level Log 0 = Trace, 1 = Debug, 2 = Info, 3 =  Warn, 4 = Error, 5 = Fatal, 6 Desabilita",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_INVVLLIQTOTVS",
+    "description": "Envia valor liquido na invoice para o TOTVS no momento no envio da Nota fiscal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SEPARAPARCELATITULO",
+    "description": "Utiliza o tipo do título e a função financeira para definir a ordem da parcela no financeiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRNOVOEXPORTACAOFECHAMENTOFINANCEIRO",
+    "description": "Ativa o novo relatório de exportação fechamento financeiro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FPGNFESAIDASENIOR",
+    "description": "Código da Forma de Pagamento da NFe de Saida do Senior",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARNCMANUENCIA",
+    "description": "Ativar o Job que integra/atualiza os Ncm's Anuência",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDAANUENCIA",
+    "description": "Validação anuência Desabilitado = 0, Valida anuência = 1, Não valida anuência = 2",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_NFEENVIARESPTECNICO",
+    "description": "Habilita envio do responsável técnico na nfe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ALIQPISENCOMENDA",
+    "description": "Aliquota Padrão do Pis nas operações de encomenda",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_ALIQCOFINSENCOMENDA",
+    "description": "Aliquota Padrão do Cofins nas operações de encomenda",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRPROCIMPODESP",
+    "description": "Habilita/desabilita a integração de processo entre importador e despachante",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPOSTOSANTECIPADOS",
+    "description": "Habilita (Marcado) regra do pagamento antecipado dos impostos ou habilita (desmarcado) a regra de pagamento pelo tipo de despesa do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROREQCLIENTE",
+    "description": "Exibe aba Requisitos do cliente na tela de processos",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VISUALIZASEMAFOROPEDIDOVENDA",
+    "description": "Visualizar Semaforo pedido venda!",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VARCAMBIALDI",
+    "description": "Controla variação cambial somente das invoices com DI registrada",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EMAILINTEGRACAO",
+    "description": "Endereço do e-mail de integração",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_EMAILUSUARIO",
+    "description": "Usuário do e-mail de integração",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORPEDCOMPRACODTRN",
+    "description": "Senior -> Código da transação para envio pedido de compra.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_RETORNARDATACONFIRMACAOERP",
+    "description": "Retornar a Data Confirmação para ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIARNFEERP",
+    "description": "Ativa envio Nfe para ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDSIGVIG",
+    "description": "Pasta de destino do requerimento SIGVIG baixado automaticamente pelo sistema.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_FORNECEDORIMPOSTOSERP",
+    "description": "Fornecedor para envio dos impostos ERP.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_HABCODINTELIGENTE",
+    "description": "Habilita a criação de código sequencial inteligente Narwal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORDECIMAISNAQTDNFE",
+    "description": "SENIOR: Informe a quantidade de decimais a enviar na NFE no campo quantidade produto.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_HABEDICAOPEDIDOINTEGRADO",
+    "description": "Habilita a edição de pedidos integrados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CALCULAPESOBRUEXPOITEM",
+    "description": "Habilita o cálculo do peso bruto no item da exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABVINCULONFEDUE",
+    "description": "Habilita vinculo da NFe exportação com a DUe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIARPROCESSOERP",
+    "description": "Ativa envio processo de importação para ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INVTIPOPRODATRIBITEMPROC",
+    "description": "Atribui o Tipo do produto da invoice nos itens do processo vinculados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "MV_FORNECEDORAUTOCOMPLETE",
+    "description": "Autocomplete Fornecedor (Chave, Nome, FornecedorIdNome, ChaveNome, NumeroDocumentoNome)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "MV_FABRICANTEAUTOCOMPLETE",
+    "description": "Autocomplete Fabricante (Chave, Nome, FabricanteIdNome, ChaveNome, NumeroDocumentoNome)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAFORNECEDOR",
+    "description": "Permitir que a API aceite atualizar os dados do fornecedor",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAPRODUTO",
+    "description": "Permitir que a API aceite atualizar os dados do produto",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAORDEMITEMPEDIDO",
+    "description": "Permitir que a API atualize a Ordem do item do pedido de compra/venda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAIMPORTADOR",
+    "description": "Permitir que a API aceite atualizar os dados do importador",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NAOPERMITESELECDESPQEMITNOTA",
+    "description": "Não permite usuário selecionar despesas na tela de nota fiscal despesa que já foram emitido nota",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TITULOENDOSSOPRO",
+    "description": "Habilita geração de titulo a receber endosso do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NFEDIVIDEFORNCFOPNCMCENTRO",
+    "description": "Habilita a divisão da nfe por fornecedor, CFOP, NCM, centro (desabilita as outras)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSULTANFEREFERENCIADAEXPO",
+    "description": "Utiliza consulta de XML de NFe referenciada ao integrar NFe para exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZATITULOSERP",
+    "description": "Marca para envio títulos financeiros ao alterar a data do embarque.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTBIMPEDIRNOERRO",
+    "description": "Impede salvar alterações ao dar erro no processamento da operação contábil e mostra mensagem na tela.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SEPARARCADADESP",
+    "description": "Gerar um item nota fiscal despesa para cada despesa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBRIGAFABRICANTEPEDIDOCOMPRAAPI",
+    "description": "Obriga informar o fabricante na api do pedido de compra item",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIARPRODUTOPARAERP",
+    "description": "Enviar o cadastro de produto para o ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAR_NALADI_NARWALDADOS",
+    "description": "Ativar o job que atualiza os dados do naladi pela api narwal dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARNCMANUENCIA_NARWALDADOS",
+    "description": "Ativar o job que atualiza os dados do ncm anuencia pela api narwal dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARNCM_NARWALDADOS",
+    "description": "Ativar o job que atualiza os dados do ncm pela api narwal dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAR_NVE_NARWALDADOS",
+    "description": "Ativar o job que atualiza os dados do nve pela api narwal dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAR_TAXA_MOEDA_NARWALDADOS",
+    "description": "Ativar o job que atualiza as taxas das moedas pela api narwal dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DRAWBACKMARINHA",
+    "description": "Exclui do rateio a desepesa de marinha mercante quando o item tem drawback",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAFOLLOWUPCLIENTE",
+    "description": "Habilita follow-up para o cliente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAINTEGRADOCEXPOCLIENTEAPI",
+    "description": "Ativa integração de documentos no cadastro do cliente via API",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CMPDINAMICAGRUPADI",
+    "description": "Ativa inserção de campos dinâmicos no agrupamento da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAAPROVATITULOERP",
+    "description": "Ativa Aprovação do titulo no ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAPARAMCSTIPIAUTO",
+    "description": "Ativa parametrização automática da CST IPI na Nfe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAARMADOR",
+    "description": "Permitir que a API aceite atualizar os dados do Armador",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARENVIOPREVISAOCUSTO",
+    "description": "Ativa o envio para ERP da previsão de custo no numerario!",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABDESPAUTODIFNFSE",
+    "description": "Habilita geração de despesa automaticamente ao autorizar nota fiscal de serviço",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HONORARIOBASEICMS",
+    "description": "Habilita função de somar o valor honorário na base de icms.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SIGVIGDESCRRESUMIDA",
+    "description": "Enviar a descrição resumida do produto ao invés da descrição para o SIGVIG",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIOLOTENFE",
+    "description": "Habilita o envio em lotes de NFe ao ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABPISCOFINSSEMCREDITO",
+    "description": "Habilita o envio do Pis Cofins sem direito a credito na nota fiscal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRRELCALCULARIMPOSTOSDEV",
+    "description": "Imprimi a nova versão do relatório Calcular Impostos em DevExpress",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRRELCALCULARIMPOSTOSDEVPAGINA",
+    "description": "Aumenta o tamanho da primeira página no relatório Calcular Impostos em DevExpress",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABPAISTRANSPRODO",
+    "description": "Habilita o envio da bandeira do pais na DI de processos rodoviarios",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIANFCOMDESPESA",
+    "description": "Habilita o envio da própria NF Despesa sem o título",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIONFENTRADASENIOR",
+    "description": "Habilita o envio da invoice como Nf entrada para o Sênior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVABAIXAPARCNUMERARIO",
+    "description": "Habilita a baixa parcial de títulos de numerário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESPICMSANT",
+    "description": "Cria despesa de ICMS antecipado ao Calcular Impostos",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IDENTIFICAIMPOSTOSDI",
+    "description": "Aplica identificação dos impostos da di não agrupados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARINVERTENUMRECEBERSANKHYA",
+    "description": "Se ativado ao enviar um pagar de numerario, vai enviar um receber igual",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAAUTOENVIOERPPREVISTO",
+    "description": "Controla o envio automático dos títulos ao ERP (0 - Não envia automaticamente, 1 - Envia automaticamente, 2 - Pergunta se deseja enviar ao salvar)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZATITPREVISTOERP",
+    "description": "Atualiza a taxa moeda previsão dos titulos ao alterar o cadastro",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEFORNDIFERETE",
+    "description": "Permite a integração do pedido de compra com fornecedores diferentes",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZACAMPOERPAPI",
+    "description": "Ativa Atualização do pedido via api, após alterar campos de usuário ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAPEDIDOALTERADOERP",
+    "description": "Envia o pedido para o ERP quando alterado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIADATASALTERADASERP",
+    "description": "Envia o pedido para o ERP quando ETA e ETD forem alteradas",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVADELETEADDITEMPEDIDO",
+    "description": "Desativa permissão de adicionar e remover item do pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVARECALCULONFEERP",
+    "description": "Desativa recalculo da Nfe ao enviar para Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBRIGAENVIOINVOICEANTESTITULOS",
+    "description": "Obriga enviar invoice antes dos titulos",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IGNORARERROSENVIOERP",
+    "description": "Ignora erros de envio para ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRELFECHACAMBIODEV",
+    "description": "Imprimi a nova versão do relatório Fechamento de Câmbio em DevExpress",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESCRICAODIPEDIDOCOMPRA",
+    "description": "Utiliza o campo descricao completa Di ao gerar um processo a partir de um pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXPOITEMLME",
+    "description": "Ativa o controle de LME para preço da exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMIRRELATORIOFECHAMENTODECAMBIOGERALDEV",
+    "description": "Imprimi a nova versão do relatório Fechamento De Cambio em DevExpress",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVAATUALIZABAIXAERP",
+    "description": "Desativa atualização do titulo na baixa ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDRECOLHIMENTOICMS",
+    "description": "Pasta de destino dos arquivos de Guia de Liberação e GARE.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDNFEXMLEXPO",
+    "description": "Pasta de destino dos arquivos de xml integrados na exportação.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_VOLCONTAINERNOTA",
+    "description": "Define Peso bruto, liquido e volume o valor do container para a nota fiscal de exportacao.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARTITULOSAOTAXA",
+    "description": "Atualizar titulos de invoice ao atualizar taxas da DI!",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOPARCEIRO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos PARCEIRO DE NEGÓCIO.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOAGENCCOTACAO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos AGENCIAMENTO COTAÇÃO.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOAGENCSOLCOTACAO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos AGENCIAMENTO SOLICITAÇÃO DE COTAÇÃO.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOAGENCPROPOSTA",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos AGENCIAMENTO PROPOSTA.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOAGENCIAMENTO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos AGENCIAMENTO.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_REDUZBASECALCULONFE",
+    "description": "Aplica redução na base de calculo indiferente do CST informado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLORIGEM_INTEGRACAOPROCESSO",
+    "description": "Url externa da aplicação para usar na integração de processos",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAAPISANKHYA",
+    "description": "Envia para a API do Sankhya ou invés do muro.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABPARCEIRONEGOCIO",
+    "description": "Habilita parceiro de negócio",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAFOLLOWUPRECCORE",
+    "description": "Habilita follow-up recorrete para entidades do core",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CALCULAMARKUPENCOMENDA",
+    "description": "Habilita o calculo de markup da encomenda",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVARBAIXAESTORNOERP",
+    "description": "Desativa a Baixa/Estorno de titulos no ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARATEIOSEGUROFRETEINCLUSO",
+    "description": "Ativa o calculo do rateio do seguro com o frete incluso",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARINVOICEPAGARCOMTAXADI",
+    "description": "Atualiza a taxa do titulo de invoice com a taxa de registro da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARPEDIDOVENDAERP",
+    "description": "Enviar a atualização do pedido de venda para o ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSULTARTITULOSERP",
+    "description": "Ativa a Consulta de atualização dos titulos do ERP para o Narwal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPRIMEUNIDADETRIB",
+    "description": "Imprime unidade tributária no lugar da unidade comercial na danfe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAR_RAZONETE_CRIAR",
+    "description": "Tipo de criação de razonete financeiro (0 - Na baixa do título, 1 - Na criação do título, 2 - Razonete operacional)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORDECIMAISPREUNINFE",
+    "description": "SENIOR: Informe a quantidade de decimais a enviar na NFE no campo preço unitário produto.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIASENIORDESPESAFECHADA",
+    "description": "SENIOR: Envio da Nota de despesa fechada.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NOTADESPESANATUREZA",
+    "description": "SENIOR: Envio da Nota de despesa controlada pela natureza da operação.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MANTERORDEMDOARQUIVOASN",
+    "description": "Integrar arquivo Invoice mantendo a ordem das linhas do arquivo informado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MAXIMOITENSADICAOELI",
+    "description": "Número máximo de itens por adição da DI e por LI (Máximo 80)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPODESPCRIAFIN",
+    "description": "Habilita criação contas a pagar na Previsão de despesa da Importação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FOLDDOCSDESPESAS",
+    "description": "Pasta de destino de documentos anexados às despesas de processo.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_ROOTGESTAOFINANCEIRO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos FINANCEIRO.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "MV_PRODDERAUTO",
+    "description": "Descricao",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_AGRUPARITEMNFEENVIOSENIOR",
+    "description": "Ativar agrupamento de itens da nfe ao enviar para SENIOR",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIASENIORPARCELADESPESA",
+    "description": "SENIOR: Envio de parcela da Nota de despesa .",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_BLOQUEARESTOQUENEGATIVO",
+    "description": "Bloquear movimentações que deixariam negativas as quantidades em estoque de algum produto",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROINVCON",
+    "description": "Habilita filtro por invoice no lançamento de container do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_QUANTITEMDIVNFE",
+    "description": "Quantidade de itens utilizados para divisão da NFE",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_TITULOSUBSTITUTO",
+    "description": "Substituir do título para o Sênior.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVACAMPOUSUITEM",
+    "description": "Ativa envio de campos do usuário do item da ordem de compra Sênior.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTCEMERCANTE",
+    "description": "Pasta raiz onde será gravado os arquivos do CE mercante.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_HABARRASTARARQUIVO",
+    "description": "Habilita arrastar arquivos para narwal diretamente.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_COTACAOFRETEDEV",
+    "description": "Habilita a impressão da cotação de frete para DevExpress",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROCEDENCIANOTA",
+    "description": "Informa o valor de procedência da nota de entrada Sênior (1 = Normal, 2 = Integração, 3 = Via Pedido, 4 = Automático, 5 = Cardio (Unimed)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOCONTRATOVENDA",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos CONTRATO VENDA.",
+    "type": "String",
+    "active": false
+  },
+  {
+    "name": "NWL_APIFORMAPAGRECRIARUPDATE",
+    "description": "Ativado irá recriar as formas de pagamento a cada atualização do pedido de compra",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_ATUALIZAPEDIDOCOMPRAERPSENIOR",
+    "description": "Ativa a atualização do pedido de compra no ERP Sênior.",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_NOMEARTITULOSSENIOR",
+    "description": "Marque para colocar prefixos/sufixos nos títulos sênior quando forem enviados ao ERP.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PEDVENADDCON",
+    "description": "Desabilita no pedido de venda adicionar itens sem contrato de venda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAFUNCOESAGENCIAMENTO",
+    "description": "Habilita funções disponíveis apenas para rotinas de agenciamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAEXPOCONTAINERPEDIDOVENDA",
+    "description": "Habilita utilizar itens do pedido de venda na exportação container",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAAPROVACAOENVIOERP",
+    "description": "Habilita fluxo de aprovação para envio de contas a pagar ao ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAMULTIMOEDANOTADESPESAEXPO",
+    "description": "Habilita o uso de multiplas moedas na nota fiscal despesa exportação.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONTROLAESTOQUEPORPROCESSO",
+    "description": "Habilita o controle de custo e quantidade de estoque por processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROCESSONOVO",
+    "description": "Habilita a rotina nova de processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FORCAESTADOESTRANGEIRO",
+    "description": "Usa 'EX' fixo na tag ufsCic do envio da nota ao sênior.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CUSTOPRODUTOAPICOMVARIACAMBIO",
+    "description": "Consulta o custo do produto na API aplicando a variação de câmbio.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARBAIXATITULOPREVISAOAOGERAREFETIVO",
+    "description": "Baixa o titulo de previsão ao gerar o efetivo.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARNUMERACAOAUTOMATICACONTASPAGAR",
+    "description": "Ativa numeração automatico contas pagar",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_REAGENDARPREVISAODESPESAENVIAUPDATEERP",
+    "description": "Reagendar previsão de despesa envia update ao invés de delete ao ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INICIOPERIODOFOLLOWUP",
+    "description": "Horário de início do período de envio de Follow's",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FIMPERIODOFOLLOWUP",
+    "description": "Horário de fim do período de envio de Follow's",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIOFINANCEIROAUTOMATICO",
+    "description": "Habilita o envio automático do título gerado a partir das parcelas da invoice ",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIASENIORDATAENTRADANOTADESPESA",
+    "description": "Configura o campo base utilizado para envio na entrada na nota tipo 8 no senior (0 - Data Emissão, 1 - Data de envio)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MODOCALCULODATAVENCIMENTO",
+    "description": "Modo padrão cálculo data de vencimento. (0 = Automático/1 = Manual)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAFORMAPAGTOAPI",
+    "description": "Permite atualizar a forma de pagamento pela API. Desabilitado quando o ERP é Sênior.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PREFIXOARQUIVOINTTRA",
+    "description": "Define o prefixo de filtro dos arquivos do inttra para integração",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAACCNAPARCELAANTINVOICE",
+    "description": "Habilita o adiantamento de contrato de câmbio para abater a parcela antecipada da invoice",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIOASYNCFINANCEIRO",
+    "description": "Habilita envio assincrono de titulos financeiros",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABIPDFANEXOFOLLOWREGISTRODESEMBDI",
+    "description": "Habilita o anexo do PDF nos Follow's enviados ao registrar ou desembara�ar uma DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITELETRAMINUSCULAXMLDI",
+    "description": "Permite que o cliente gera a Di com a descrição da mercadoria em minusculo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CALCULASALDOPEDIDOVENDACONTAINER",
+    "description": "Faz o cálculo do saldo do pedido de venda pelos itens da expo vinculados em containers",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TENTASUBSTITUICAOTITULOSENIOR",
+    "description": "Ao enviar o titulo para o senior, tenta substituir primeiro caso ocorra algum erro continua com a rotina de enviar normalmente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEINTEGRARNDJALLES",
+    "description": "Permite integrar titulos de nota fiscal despesa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZASEQNUMPARC",
+    "description": "Utiliza sequencial para títulos criados a partir de parcelas do numerário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAQUANTEMBCONTAINER",
+    "description": "Habilita o uso da quantidade de embalagem no container do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROCESSAACCAUTOMATICAMENTE",
+    "description": "Processa o adiantamento de contrato de câmbio ao salvar a invoice ou o contrato",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITATOTALABATEADIINVOICE",
+    "description": "Habilita abatimento total do valor das parcelas de acordo com valor presente no adiantamento do contrato de câmbio",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAENVIORATEIONOTAFISCALDESPESA",
+    "description": "Quando habilitado, faz rateio da nota fiscal de despesa pela nota importação para envio ao SAP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZASEQINVPARC",
+    "description": "Utiliza sequencial para títulos criados a partir de parcelas da invoice",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ACCESSKEYNAMESAPB1",
+    "description": "Nome da coluna do SAPB1 que contem o id da nota",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVARCANCELAMENTOTITULOS",
+    "description": "Desativa o Cancelamento de titulos NO NARWAL, Cancela no ERP e vem para o Narwal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVARESTORNOSTITULOS",
+    "description": "Desativa o Estorno de titulos NO NARWAL, Estorna no ERP e vem para o Narwal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARRATEIOAREALINHAMATERIAL",
+    "description": "Ativa o rateio de titulos por area e linha/material",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVAENVIOAPROVACAOREJEITACAOERP",
+    "description": "Ao ativar ele passara por uma validacao se pode enviar ou aprovar no ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UPDSTATUSINTEGRAPEDCOMPAPI",
+    "description": "Permite atualização do campo de status da integração para 'Não enviado', no pedido de compra, ao atualizar ele por API",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESABILITACRIACONTAINERINTTRA",
+    "description": "Desabilita a criação automática de containers ao realizar a integração de um arquivo inttra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MANTERPESOLIQUIDOUNITARIOITEMXMLDI",
+    "description": "Mantém o peso líquido unitário informado no item do processo antes da integração do XML da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZACLIENTE",
+    "description": "Permitir que a API aceite atualizar os dados do cliente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TOTVSENVIARREFDESPACHANTERECBTOIMPOFILHA",
+    "description": "Enviar campo referência despachante na integração de notas filhas do recbto de importação ao Totvs",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_SALESPERSONCODESAPB1",
+    "description": "Enviar SalesPersonCode PARA SAP B1",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PESQUISARINVOICESEMVINCULOPROCESSO",
+    "description": "Permite pesquisar invoices que não possuam vínculos com processos na tela de Gestão de Câmbio",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITATITULODIFCOMPENSACAO",
+    "description": "Habilita a baixa de títulos para contas a receber de compensação sem adiantamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MOEDAAPLICADAPTAXPARATAXADI",
+    "description": "Taxa da moeda aplicada da despesa do processo passa a pegar Taxa da DI ao invés da Ptax do dia",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVATAXAFECHAMENTOBAIXAMANUAL",
+    "description": "Ativa a taxa de fechamento ao executar uma baixa de título a pagar manual",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAENVIONUMEXPOPEDVENDAERP",
+    "description": "Ativa o envio da numeração de exportações geradas a partir de pedidos de venda para o ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZAFORMULAPARAMNFETRANSITO",
+    "description": "Utiliza formula da parametrzação da NFE no cálculo dos valores totais da nota de trânsito",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAVARIACAOCAMBIALEXPO",
+    "description": "Ativa a variação cambial de exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITASOMATORIOITENSAGENC",
+    "description": "Habilita somatório nas grids de itens para o agenciamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZAPARCPAGAVARCAMB",
+    "description": "Utiliza apenas parcelas pagas para cálculo de variação cambial",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEATUALIZARVALORESCONTRATOCAMBIO",
+    "description": "Permite atualizar valores do contrato de cambio",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_LANCAMENTOFINACEIROPORCONTACONTABIL",
+    "description": "Habilita o lançamento financeiro para cada conta contábil em Contas a Pagar e Contas a Receber",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAPARCELASPAGASADIANT",
+    "description": "Efetua o pagamento de todas as parcelas antecipadas da invoice, ao realizar adiantamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBRIGADATAENVIOIMPOSTO",
+    "description": "Obriga informar a data de emissão e a data de vencimento para geração dos títulos a partir do envio de impostos da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NFESAIDAENCOMENDAUNITARIO",
+    "description": "Habilita o valor unitario para notas de saída por encomenda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MAPEIACAMPOANALISTA",
+    "description": "Mapeia o campo analista do pedido para o campo analista do processo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PROJSANKHYAFIXO",
+    "description": "Envia código de projeto fixo nas integrações Sankhya",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_FECHASEMPARCELA",
+    "description": "Considerar fechamento cambio sem vinculo com fechamento financeiro parcela",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVAEMVIOAUTOMATICOERP",
+    "description": "Quando marcado ele não enviara titulo para erp ao salvar pedido ou com a integração",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_LORENPEDIDO",
+    "description": "Quando ativado filtra apenas pedido de compra vinculado no contas a pagar",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESADOCCLIENTE",
+    "description": "Quando habilitado documento nasce desmarcado a visualização do cliente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITADESPESASTRANSPORTES",
+    "description": "Habilita o lançamento de despesas, na aba Transporte, por containers e de serviços que não dependem de containers",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_USARFOMASPAGAMENTOPEDIDONAINVOICE",
+    "description": "Usar forma pagamento dos pedidos de compra vinculado ao processo ao gerar invoice",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESABEDITPRECOPRODPC",
+    "description": "Desabilita a edição da coluna Preço, em Produtos, dentro de Pedido de compra. Valor será definido pelo ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAFORMULACALCULOSEGURO",
+    "description": "Habilita preenchimento automatico do campo Fórmula calculo seguro do processo, de acordo com o que está prenchido no 1° produto do processo.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UNMEDIMPSENIOR",
+    "description": "Utiliza Unidade de Medida do Estoque ou Unidade de Medida do Fornecedor para Pedido de Compra que vem do Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSDESCCOMPLETA",
+    "description": "Quando flegada vai considerar a descrição completo do produto na index de lote",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIOVENCIMENTOINFERIORHOJE",
+    "description": "Permite o envio de títulos com data de vencimento inferior a data atual",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DIFERENCAIMPRETIFICACAO",
+    "description": "Efetua o calculo da diferença dos impostos entre um numerário já existente",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_COMECACOMPEDIDODEVENDA",
+    "description": "Pesquisa o número do Pedido de Compra com *começa com* ao invés da forma padrão",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OPCOESPADRAOINTEGRARXMLLI",
+    "description": "Define quais as opções serão trazidas por padrão na integração do XML da LI",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZAMARINETRAFFICAPI",
+    "description": "Habilita o uso do marine traffic para consulta das posições dos navios(UTILIZAR SOMENTE POR MEIO DE AUTORIZACAO)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ORACLEVERSION12",
+    "description": "Quando ativada ao invez de usar Offset ele usara rownum",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_GRAVAVALORCUSTOMEDIOPROD",
+    "description": "Permite gravar o Valor do Custo Médio em Previsão de Custo do produto ao usar o botão da previsão de custo em Processo > Numerário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENCERRAITEMPC",
+    "description": "Habilita a opção no usuário para permitir encerramento do item do pedido de compra.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITADESCACRESCIMOPC",
+    "description": "Habilita cálculo de preço baseado no preço original, acrescimos e descontos, no item do pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_BLOQUEIAMOEDAPC",
+    "description": "Bloqueia a moeda da mercadoria quando o item do processo e o item da invoice tem pedido de compra atrelado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIORATEIOPRODUTOLOTE",
+    "description": "Enviar entrada de titulos em lote com rateios do cadastro de produto invoiceParcela Contas a Pagar Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXCLUIOSITENSDOPEDIDODEVENDA",
+    "description": "Quando desvinculado um determinado item do processo(expo), todos os itens desse mesmo pedido de venda que estiverem vinculados, também devem ser excluídos.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESABANEXOFOLLOWUPLIDEFERIMENTO",
+    "description": "Desabilita o envio de anexo para Follow Up de LI deferida",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESABCALCULOEMBALAGEM",
+    "description": "Desabilita o cálculo de Quantidade de Embalagens ao gerar um processo a partir de um pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIOEMAILERROAPI",
+    "description": "Enviar e-mail para suporte quando houver algum problema na integração via API",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSIDERATOLERANCIAPRODUTO",
+    "description": "Considera fazer o cálculo do saldo do Pedido de Compra e de Venda na forma de porcentagem de tolerância sobre o total (O campo Considera Tolerância do Produto tem influência nesta variável)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_GRAVAPEDCOMPRAITEMFULL",
+    "description": "Atualizar itens do pedido de compra sem validar data de encerramento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESCONSIDERAQUANTPRECO",
+    "description": "Ao ativar mesmo que com DI registrada deixara modificar quantidade e preço do item",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TAXCODESAPB1NFFDESPESA",
+    "description": "TaxCode referente integração SAP B1 - Nota Fiscal de Despesa",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ADIANTAMENTOFORMAPAGAMENTO",
+    "description": "Habilita geração de titulos de previsão do pedido de compra pelas parcelas da forma de pagamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CALCULAARMAZENAGEMPROCESSOS",
+    "description": "Calcula o custo de armazenagem dos processos em aberto",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSIDERADATANFOUFRETENACIONAL",
+    "description": "Determina qual data será utilizada entre da nota fiscal ou do frete nacional.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESCONTOFINANCEIROARQUEACAO",
+    "description": "Sinaliza que o cliente utiliza desconto financeiro nas invoices em processos com arqueação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TITULOMANTERHISTORICO",
+    "description": "Manter historico padrao de titulos alterados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESPESAUSAFRETEPREPAID",
+    "description": "Gerar despesas de frete com base no frete pre-paid quando o frete estiver zerado",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERCENTUALAFRMM",
+    "description": "Alíquota do AFRMM (Marinha mercante) - (valor em %)",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPORTADORPROPRIOUSACONFIGTIPODESPESA",
+    "description": "Sinaliza que o cliente importador próprio, utiliza as configurações de pago por da aba DI/DA no numerário.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TAMANHOLOTESANKHYA",
+    "description": "Tamanho máximo de lotes de produtos no Sankhya ",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_AZUREADLOGIN",
+    "description": "Valor token microsoft no login via AzureAD.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DESABILITAENVCANCEAUTOMATICENVICANCENFE",
+    "description": "Desabilita o envio e cancelamento do titulo ao enviar ou cancelar a nfe",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ESTRUTURADEENVIOTOTVS",
+    "description": "TOTVS: Quando habilitado vai enviar pela estrutura 'Https'",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAOUTROSIMPSANKHYA",
+    "description": "SANKHYA: Envia dados do II por itens para tabela TGFIMN, adicionando o valor no Total da nota",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIADADOSFATURASANKHYA",
+    "description": "Envia dados da fatura para o Sankhya nos campos Personalizados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TENANTID",
+    "description": "TenantId da base do cliente",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_TAXAUTILZACAOMERCANTE",
+    "description": "Permite atualizar a taxa de utilização mercante",
+    "type": "Double",
+    "active": true
+  },
+  {
+    "name": "NWL_TEMPOCONTABILIZACAO",
+    "description": "Define o tempo em segundo que leva a contabilização para cada nota",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAENVIORATEIONOTAFISCALDESPESAVIASAPDIAPI",
+    "description": "SAP: Habilita envio de Nota Fiscal de Despesa diretamente via DI-API sem intermedio de parceiros terceiros",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVOPERFINANESPECIFICADASANKHYA",
+    "description": "Sankhya: Quando ativo, os campos: CODCTABCOINT, NUMNOTA, DTNEG e DTVENC serão enviados conforme operação financeira",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBRIGAPEDIDODECOMPRACONTRATO",
+    "description": "Quando ativada o Contrato de cambio obriga informar um pedido.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_USUARIOJOBNOVOCOMEX",
+    "description": "Usuário para autenticação do novo Comex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_SENHAJOBNOVOCOMEX",
+    "description": "Senha para autenticação do novo Comex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_NOVOCOMEX",
+    "description": "Habilita ou desabilita o uso do Novo Comex",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLAPINOVOCOMEX",
+    "description": "Url da API do Novo Comex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_URLUINOVOCOMEX",
+    "description": "Url da Interface do Novo Comex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_TENANTNAME",
+    "description": "TenantName a ser usado para acessar o Novo Comex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATTPROCESSOEXPOAUTO",
+    "description": "Atualizar o processo de exportação conforme a mudança no pedido de venda.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ADICIONAIINADESPESAADUANEIRASANKHYA",
+    "description": "Sankhya - S - Soma o II nas despesas Aduaneiras N - Envia somente o valor de Outros como Despesa Aduaneira",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_RELATORIOCUSTOMIZADOREPXOLD",
+    "description": "Permite importar um relatório do formato repx na rotina de gestão de relatórios.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAPARCELASPAGASADIANTEXPO",
+    "description": "Efetua o pagamento de todas as parcelas antecipadas da exportação, ao realizar adiantamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_OBSERVACAOINFFISCOSANKHYA",
+    "description": "Sankhya - S - Envia Informações Adicionais do Fisco para o Campo Observação. N - Envia informações Complementares (Default)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TIPOFRETESANKHYA",
+    "description": "Sankhya - S - Envia 0 para CIF e 1 FOB - Quando 1, 2, 3, 4 e 9. N - Mantém Padrão",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PESOLIQMANUALSANKHYA",
+    "description": "Sankhya - S - Envia a tag PESOLIQUIMANUAL. N - Não envia a Tag",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MODALIDADEIMPORTACAOSANKHYA",
+    "description": "Sankhya - S - Envia a modalidade de importação. N - Mantém padrão (não envia a modalidade de importação)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITACRIACAOTITULOSEMPEDIDOVENDA",
+    "description": "Quando habilitada criará o tilulo mesmo que não há pedido de venda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_IMPORTADOREDESPACHENTEPARAOPROCESSO",
+    "description": "Quando preenchida pega o valor para preencher o importador e despachante na criação do processo(primeiro chave do importado depois despachante separado por virgula)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_MICROSOFTCLARITYID",
+    "description": "Id da configuração do Microsoft Clarity",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIALOTERATEIOSENIORPAGAR",
+    "description": "Enviar entrada de titulos em lote utilizando método de rateio - Contas a Pagar Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAATUALIZACAOFATURAERP",
+    "description": "Senior: Quando ativo envia atualização da fatura para o Senior Piccadilly",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CONSIDERASISCOMEXEMB",
+    "description": "Quando habilitada considera campo SISCOMEX na embalagem ao invés da Chave quando integra DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZACALCULOENTRADA",
+    "description": "Utiliza base de cálculo da nota fiscal de entrada para a geração da nota fiscal de saída",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INTEGRANFEVIASENIOR",
+    "description": "Habilita a integração de xml de Nf-e diretamente do ERP da Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIADUESENIOR",
+    "description": "Quando habilitada envia a DU-E para o Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIATAXACONTRATODECAMBIO",
+    "description": "Enviar via webservice o valor da taxa da moeda para o ERP - Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIKEYMARINETRAFFIC",
+    "description": "Chave da API utilizada para consulta do Marine Traffic",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ALLOGCRITERIA",
+    "description": "Allog: Criterio de seleção de processos 1 - Por processo, 2 - Referencia Adquirente(NumeroPO)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_URLAPISALESFORCEPENVIAROPOSTA",
+    "description": "Url da API Proposta Sales Force",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAETDETDTXT",
+    "description": "Preencher Data ETD e ETA do Processo apos Integrar TXT de arquivos despachante",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZAPTAXCOMPRANFE",
+    "description": "Quando ativado considera o valor da TaxaPtaxCompra para emissão de nota fiscal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESCONSIDERACSTIPISENIOR",
+    "description": "Senior: Quando ativa, ao enviar a nota fiscal ao senior desconsidera CSTIPI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARMOCKEMDEBUGENVIARCONSULTARLI",
+    "description": "Quando ativa não faz consultas diretamente ao siscomex na rotina de LI em modo de DEBUG",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDAREGRASDECEXLISUB",
+    "description": "Quando ativado valida regras de campos de acordo com Decex",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAUNIMEDSENIOR",
+    "description": "Quando desativada envia NULO no campo UniMed no XML da Nfe quando o ERP é Senior",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CLIENTECOMPRADOREXPO",
+    "description": "Quando ativa preenche automaticamente o campo Comprador quando o campo Cliente for preenchido na aba Dados Cadastrais do Processo de Exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MANIPULAMOCLI",
+    "description": "1 Vai deferir a LI em modo debuger, 2 Cancela Li, outros numeros o status volta aleatorio",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARMOCKEMDEBUGENVIARREGISTRODI",
+    "description": "Quando ativa não registra de fato a DI apenas simula resultados em modo de DEBUG",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_MANIPULAMOCDI",
+    "description": "1 Vai registrar a DI em modo debuger, 2 Cancela DI, outros numeros o status volta aleatorio",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "MV_TAMTITIOPEPAGIMP",
+    "description": "Tamanho do campo Numero do título na tela de Operação de pagamento de importação",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_OPEPAGIMPTITAUT",
+    "description": "Faz com que o campo titulo da tela Operação de pagamento de importação seja preenchido automaticamente ao digitar o número do contrato.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAPEDEITEMPEDNFE",
+    "description": "Habilita envio numero pedido compra e pedido compra item nas tags xPed e nItemPed ao enviar ERP(Senior) ou SEFAZ",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PARAMETRIZAONUMERARIO",
+    "description": "Aplica a parametrização da NF-e no calculo do Numerário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARATRIBUTOSNCM_NARWALDADOS",
+    "description": "Ativar o Job que integra/atualiza os atributos de Ncm's do Narwal Dados",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZAPARAMETRIZACAOCSTIPICSTICMSINTEGRANFE",
+    "description": "Atualiza CST ICMS e CST IPI pela parametrização ao integrar NFE de terceiros",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PARAMETRIZADOVLROICVLROICNFE",
+    "description": "Retorna tags VlrOic e VlrOic de acordo com o CST de IPI e CST ICMS da parametrizacao da Nota Fiscal.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOATOCONCINTEGRADO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos Ato Conscessório Integrado Suspensão.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ROOTGESTAOATOCONCINTEGRADOISENCAO",
+    "description": "Pasta raiz onde será gravado os arquivos da gestão de documentos Ato Conscessório Integrado Isenção.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_CANCELAPREVISIONAMENTONOENVIONFE",
+    "description": "Realiza a exclusão dos títulos previsto do numerário ao Enviar a nota fiscal para o ERP",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_COFINSMAJORADOSENIOR",
+    "description": "Quando ativada não envia a majoração do cofins para o Senior.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_RATEIOPROCESSODEDUCAO",
+    "description": "Quando possuir uma DI com dedução de valores,definir se o rateio da dedução será por: Valor = 0, Peso = 1 ou CIF = 2.",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ORDEMRECEBIMENTOADTEXPO",
+    "description": "Quando ativa gera a Ordem de Recebimento do tipo adiantamento pela Exportação Parcela",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERIODOLIMPAARQUIVOSLOG",
+    "description": "Período em mês em que deve ocorrer a limpeza dos arquivos de logs",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_DATAETAMARINETRAFFIC",
+    "description": "Caso habilitado a data eta do navio vai pegar do campo Reported ETA",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEALTERARQTDALI",
+    "description": "Quando ativa permite alterar a quantidade do Processo, mesmo que já tenha LI vinculada.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAVERSAOBETA",
+    "description": "Quando ativa permite atualizar sistema para versão beta também",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZARTAXAMULTAJUROS",
+    "description": "Quando ativa atualiza a Taxa Multa Juros diretamente do banco central",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDAQTDDISPFORNEC",
+    "description": "Quando ativa valida saldo do item pedido pelo saldo quantidade fornecedor",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAVLROICICMSDIFERIDO",
+    "description": "Quando ativa enviará o valor ICMS no campo vlroic para o Senior quando tiver ICMS Diferido/Suspenso",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESEJASAIRLIDI",
+    "description": "Ao clicar no voltar da tela de LI e DI, pergunta se deseja realmente voltar/sair da tela. E ao fechar a tela de Li também pergunta.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESOBRIGAFATORCONVERSAO",
+    "description": "Quando ativo, desobriga informar o campo de fator de Valor fator de conversão da rotina de Conversão Unidade de Medida.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXIBERECEITATRIBUTARIADI",
+    "description": "Autocomplete Receita Tributária (Chave, Codigo, Descricao, CodigoDescricao)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDAANUENCIAPC",
+    "description": "Quando ativa validará a anuência do item no pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NAOALTERAITEMINTEGRADI",
+    "description": "Não altera itens do processo na integração do xml da DI",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAESTADOFORNECEDOR",
+    "description": "Permitir que a API aceite atualizar os dados do Estado do Fornecedor",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_USAUNIDADEDOPCPARAEMISSAONF",
+    "description": "Utiliza quantidade e unidade de medida do pedido de compra para gerar nota fiscal",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VALIDATOTALPEDIDONOCONTRATO",
+    "description": "Quando a variável estiver habilitada ao criar um novo contrato como adiantamento valida se o valor do contrato excede o saldo de contratos já vinculados a esse pedido de compra",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXLUIPREVDESPIMPNUMERARIO",
+    "description": "Quando ativa Excluir titulos previstos de invoice e despesas na geração de parcelas do numerário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_DESATIVAPREFIXOINVCONTASPAGAR",
+    "description": "Remover prefixo INV dos titulos de Invoice quando criado no Contas a Pagar",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEALTERARFRETECOLLECT",
+    "description": "Quando ativa permite alterar o valor do frete collect ao integrar arquivo despachante",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_REGRANUMEROPROJETOSANKHYA",
+    "description": "Opções de como enviar o código projeto com ERP Sankhya. 0 - Não envia, 1 - Número Processo, 2 - Número Projeto, 3 - Fixo da variável de ambiente NWL_PROJSANKHYAFIXO",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_SOBRERESCREVERIMPOSTOSDIRETIFICADAAOINTEGRAR",
+    "description": "Sobreescrever os principais impostos de II, IPI, PIS e COFINS da DI ao calcular impostos de uma di Retificada",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_EXLUIPREVDESPNFDESPESA",
+    "description": "Quando ativada irá excluir os títulos de numerario quando gerado uma nota fiscal de despesa e o fornecedorId da nota fiscal de despesa for igual ao fornecedorId do Numerario Parcela",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVABAIXAPARCNUMERARIOEXPO",
+    "description": "Habilita a baixa parcial de títulos de numerário expo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_VLRFINSOMENTENOTATERCEIROSERPSENIOR",
+    "description": "Nfe Sênior, somente envia valor na tag VlrFin se NF-e for emitida por terceiros.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_QTDDEIMALVLRUNITSANKHYA",
+    "description": "Quantidade de casas decimais no campo VLRUNIT do sankya",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_SENIORENVIAORDEMCOMPRAFILHA",
+    "description": "Invoice retorna ao ERP com dados para criação de uma Ordem de Compra Filha.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_NATUREZAOPERACAOPADRAO",
+    "description": "Preencherá automaticamente a natureza de operação na nota fiscal de despesa conforme código da natureza informado no campo valor",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_QTDDEEMBADOPEDIDOVENDA",
+    "description": "Considera a quantidade de embalagem no Processo (expo) conforme informado no Pedido de Venda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_UTILIZACCT",
+    "description": "Habilita a consulta de processos no CCT",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLGETCCT",
+    "description": "Link da url para fazer a consulta do CCT",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_URLGETVIAGEMMANIFESTO",
+    "description": "Link da url para fazer a consulta de viagem",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIODADOSIPICMSPORCSTERPSENIOR",
+    "description": "Envio de dados IPI/ICMS de acordo com CST de retenção/supensão/deferimento/aliquitazero",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FILTRAPARAMETRIZACAONFINTEGRADO",
+    "description": "Quando ativada o campo Parametrização NF Listará somente as do cliente integrado.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIAIMPOSTOSDIDUIMPAUTOMATICAMENTE",
+    "description": "Quando ativada ao registrar a DI/DUIMP no SISCOMEX serão criados automaticamente os títulos de impostos e enviados ao ERP.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLPOWERBIBECOMEX",
+    "description": "Link da url becomex para utilizar o PowerBI",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_CLIENTIDPOWERBIBECOMEX",
+    "description": "ClienteId para utilizar o PowerBI Becomex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_APIKEYDARE",
+    "description": "Api-Key utilizada para acesso e permissão à API da DARE",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_DIASEXPBID",
+    "description": "Dias para expiracao do Bid de Fornecedor",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_USASHIPSTRACKING",
+    "description": "Usar integração com ShipsTracking para consultar a posição dos navios do processo. 0 - Nenhum; 1 - ShipsGo; 2 - LogComex",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_APIKEYSHIPSTRACKING",
+    "description": "Token de acesso a API de do site ShipsTracking",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_APIURLSHIPSTRACKING",
+    "description": "Url da API do site ShipsTracking",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVAREGRAIMPOSTO",
+    "description": "Habilita os impostos serem calculados conforme regras de impostos cadastradas",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_INVOICEEXPO",
+    "description": "Habilita criação de Invoice para Exportação",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_FRASESPENDENCIAFRETESICOMEX",
+    "description": "Frases de pendência de frete do siscomex (SEPARAR-LAS POR ;)",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAPROCESSAMENTOCONTRATOCOMISSAO",
+    "description": "Habilita processamento contrato comissão via expo ou impo",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_CAMPODESCRICAONOTAFISCAL",
+    "description": "Configuração da tag infAdProd e xProd, caso for 1 informa Descrição do produto e Descrição completa da DI, caso for 2 não informa a taf infAdProd e informa a tag xProd com Descrição do produto, caso for 3 não informa tag infAdProd e informa a tag xProd com Descrição completa DI",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVACONSULTASHIPSTRACKINGAUTOMATICA",
+    "description": "Habilita ou desabilta o botão Consulta Ships Tracking no Processo IMPO e EXPO e se a criação do Embarque na Logcomex será automático ou por ação do usuário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITABLOQUEIOUSUARIO",
+    "description": "Habilita bloqueio de usuário quando acessando mesma tela",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITASOFTLOCK",
+    "description": "Habilita rotina de comparação ao salvar processo para salvar somente valores alterados para evitar problemas com alteração nos jobs",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATUALIZATTCE",
+    "description": "Habilita rotina de atualização dos tratamentos tributários",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ALERTASDUE",
+    "description": "Habilita tag para termo de ciência de alerta não impeditivo ao registrar a DU-e",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_GESTAODOCSEXTENSAO",
+    "description": "Extensões de arquivos permitidas na gestão de documentos separadas por \\",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_INTERVALOJOBATUALIZAPOSICAONAVIOSHIPSGOJOB",
+    "description": "Define o intervalo de tempo em que o job AtualizaPosicaoNavioShipsGoJob sera executado.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_VERIFICARFALHASPUCOMEX",
+    "description": "Define o intervalo de tempo em que o job ProcessaFalhasPucomexRecurringJob sera executado.",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARJOBATUALIZAVALORESTOQUEDIARIO",
+    "description": "Ativar a execução do job de atualização de valor estoque diário",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITABLOQUEIOUSUARIO",
+    "description": "Habilita bloqueio de usuário quando acessando mesma tela",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITASOFTLOCK",
+    "description": "Habilita rotina de comparação ao salvar processo para salvar somente valores alterados para evitar problemas com alteração nos jobs",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ALERTASDUE",
+    "description": "Habilita tag para termo de ciência de alerta não impeditivo ao registrar a DU-e",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ATIVARJOBGNRERECEITA",
+    "description": "Ativar a execução do job de gnre receita",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAFILIAL",
+    "description": "Permitir que a API aceite atualizar os dados da filial",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAFABRICANTE",
+    "description": "Permitir que a API aceite atualizar os dados do fabricante",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAVENDEDOR",
+    "description": "Permitir que a API aceite atualizar os dados do vendedor",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAFORMAPAGAMENTO",
+    "description": "Permitir que a API aceite atualizar os dados da forma de pagamento",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAINCOTERM",
+    "description": "Permitir que a API aceite atualizar os dados do incoterm",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAMOEDAMERCADORIA",
+    "description": "Permitir que a API aceite atualizar os dados da moeda",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAVIATRANSPORTE",
+    "description": "Permitir que a API aceite atualizar os dados da via transporte",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAEMBALAGEM",
+    "description": "Permitir que a API aceite atualizar os dados da embalagem",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAORIGEMDESTINO",
+    "description": "Permitir que a API aceite atualizar os dados da origem e destino",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_APIATUALIZAEMBALAGEMDIMENSAO",
+    "description": "Permitir que a API aceite atualizar os dados da dimensão da embalagem",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLLOGINBECOMEX",
+    "description": "URL login becomex",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_PREPARACAOLANCAMENTOCR",
+    "description": "Envia lancamento de preparacao contas Receber - Senior (S/N)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PORTACR",
+    "description": "Porta Senior para Contas Receber (PORTACR = 0 / PORTACR2 = 1)",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_CONCILIACAOPORWSDL",
+    "description": "Utiliza Web Service Sênior para realizar conciliação",
+    "type": "Bool",
+    "active": false
+  },
+  {
+    "name": "NWL_HABILITADESPESAINTERNACIONAL",
+    "description": "Permite informar a taxa de conversão para a moeda desejada nas despesas",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_URLEXTAPI",
+    "description": "URL padrão do ambiente próprio de API, exemplo: https://exemploapi.narwalsistemas.com.br",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITAR_DIANA",
+    "description": "Habilitar o uso da DIANA",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_LIMITE_GERACAO_PLANILHA_DIANA",
+    "description": "Limite de itens para ser preenchidos em pela DIANA",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_DUIMP_CALCULO_PARALELO_QUANTIA",
+    "description": "Número máximo de cálculos paralelos que pode ser feito para calcular os itens da DUIMP",
+    "type": "Int",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIANFAPITOTVS",
+    "description": "Quando o ERP for Totvs e essa variavel estiver ativa, ao enviar a nota fiscal ao ERP, ela ficará disponivel na api nfe/consultarpendentes e não irá mais pela Crosscutting",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_ENVIADESPESASADUANEIRASSEMPISECOFINS",
+    "description": "Sankhya - S - Envia VLRDESTAQUE sem o Pis e Cofins - N - Envia com o PIS e Cofins no VLRDESTAQUE (Default)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_GATEWAYSANKHYA",
+    "description": "Sankhya com GateWay (S/N)",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_TOKENGATEWAY",
+    "description": "Token GateWay do Cliente",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_APPKEYGATEWAY",
+    "description": "Token APP Key Gate Way Narwal",
+    "type": "String",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITARIA",
+    "description": "Habilitar o uso da IA para geração de invoice",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERMITEUSARDESPESANOVAMENTE",
+    "description": "Permite usar despesa mais de uma vez na nota fiscal de despesa",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_PERCENTUALPORCENTROCUSTO",
+    "description": "Permite inserir mais de um centro de custo por item.",
+    "type": "Bool",
+    "active": true
+  },
+  {
+    "name": "NWL_HABILITABOARDTELAINICIAL",
+    "description": "Habilita a tela inicial com boards do processo.",
+    "type": "Bool",
+    "active": true
+  }
+]

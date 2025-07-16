@@ -34,11 +34,15 @@
     <Compile Include="pages\0_Home.py" />
     <Compile Include="pages\Analisar_Template_N2.py" />
     <Compile Include="responder.py" />
+    <Compile Include="scripts\extract_env_vars.py" />
     <Compile Include="utils.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="base_conhecimento\" />
     <Folder Include="base_conhecimento\manuais\" />
+    <Folder Include="data\" />
+    <Folder Include="data\seeder\" />
+    <Folder Include="scripts\" />
     <Folder Include="pages\" />
   </ItemGroup>
   <ItemGroup>

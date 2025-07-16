@@ -10,7 +10,7 @@ import base64
 
 from utils import aplicar_estilo_base, gerar_url_movidesk
 from movidesk_integration import buscar_tickets_movidesk
-
+st.cache_resource.clear()
 # 1. Carrega variáveis do .env (somente local)
 load_dotenv()
 
@@ -56,12 +56,20 @@ for key in ["historico", "mostrar_opcoes", "feedbacks_dados", "menu_expandido", 
         st.session_state[key] = [] if key == "historico" else {} if key == "feedbacks_dados" else False
 
 with st.expander("📸 Analisar com IA", expanded=False):
-    col1, col2 = st.columns([0.1, 0.3])
-    with col1:
-        imagem = st.file_uploader("Imagem do erro (print de tela)", type=["png", "jpg", "jpeg"], key="img_upload")
-    with col2:
-        comentario = st.text_input("Descrição do erro", placeholder="Ex: ocorre ao salvar a nota...", key="comentario_input")
+    container = st.container()
+    
+    with container:
+        imagem = st.file_uploader(
+            "Imagem do erro (print de tela)", 
+            type=["png", "jpg", "jpeg"], 
+            key="img_upload"
+        )
 
+        comentario = st.text_input(
+            "Descrição do erro", 
+            placeholder="Ex: ocorre ao salvar a nota...", 
+            key="comentario_input"
+        )
     if imagem:
         if st.button("📤 Enviar para análise"):
             imagem_bytes = imagem.read()
@@ -101,7 +109,7 @@ with st.expander("📸 Analisar com IA", expanded=False):
                     st.session_state["consulta_azure"] = termo
 
 if st.session_state.get("consulta_azure"):
-    if st.button("🔎 Buscar no Azure DevOps por este erro", key="buscar_erro_azure"):
+    if st.button("Buscar no Azure", key="buscar_erro_azure"):
         from azure_integration import buscar_work_items
         with st.spinner("Consultando Azure DevOps..."):
             resultados = buscar_work_items(st.session_state["consulta_azure"])
@@ -114,7 +122,7 @@ if st.session_state.get("consulta_azure"):
         del st.session_state["consulta_azure"]
 
     termo_movidesk = st.session_state.get("consulta_azure", "")
-    if st.button("🟦 Buscar no Movidesk por este erro", key="btn_movidesk"):
+    if st.button("Buscar no Movidesk", key="btn_movidesk"):
         with st.spinner("Consultando Movidesk..."):
             resultados = buscar_tickets_movidesk(termo_movidesk)
 
@@ -186,7 +194,7 @@ if pergunta:
 if st.session_state.get("ultima_pergunta"):
     termo_erro = st.session_state["ultima_pergunta"]
     with st.chat_message("assistant"):
-        if st.button("Buscar no Azure por este erro"):
+        if st.button("Buscar no Azure"):
             with st.spinner("Consultando Azure DevOps..."):
                 from azure_integration import buscar_work_items
                 resultados_azure = buscar_work_items(termo_erro)
@@ -197,7 +205,7 @@ if st.session_state.get("ultima_pergunta"):
             else:
                 st.info("Nenhum card relacionado foi encontrado no Azure.")
 
-        if st.button("Buscar no Movidesk por este erro", key="btn_movidesk_ultima"):
+        if st.button("Buscar no Movidesk", key="btn_movidesk_ultima"):
             with st.spinner("Consultando Movidesk..."):
                 from movidesk_integration import buscar_tickets_movidesk
                 resultados_movidesk = buscar_tickets_movidesk(termo_erro)
@@ -210,21 +218,38 @@ if st.session_state.get("ultima_pergunta"):
                 st.info("Nenhum chamado relacionado foi encontrado no Movidesk.")
 
 
-# Novo menu lateral com toggle
+# Novo menu lateral no estilo ChatGPT (sem emojis)
 def alternar_menu():
     st.session_state["menu_expandido"] = not st.session_state["menu_expandido"]
 
 with st.sidebar:
-    col1, col2 = st.columns([0.2, 0.8]) if st.session_state.get("menu_expandido", False) else st.columns([1, 0.001])
-    with col1:
-        st.button("⚙️", key="toggle_menu", on_click=alternar_menu, help="Expandir/recolher menu")
+    st.markdown('<div class="menu-lateral-wrapper">', unsafe_allow_html=True)
 
-    if st.session_state.get("menu_expandido", False):
-        with st.container():
-            st.markdown('<div class="menu-lateral-wrapper">', unsafe_allow_html=True)
-            st.button("🔄 Reprocessar", key="reprocessar", on_click=lambda: criar_ia_resposta(reprocessar=True))
-            st.button("📋 Analisar template N2", on_click=lambda: st.session_state.update({"ir_para_template_n2": True}))
-            st.markdown('</div>', unsafe_allow_html=True)
+    # Botão Reprocessar
+    st.button("Reprocessar", key="reprocessar", on_click=lambda: criar_ia_resposta(reprocessar=True), use_container_width=True)
+
+    # Botão Sobre o Narwave
+    if st.button("Sobre o Narwave", key="botao_sobre", use_container_width=True):
+        st.session_state["mostrar_sobre"] = not st.session_state.get("mostrar_sobre", False)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Exibe informações somente ao clicar
+if st.session_state.get("mostrar_sobre"):
+    st.info("""
+    **Narwave** é um assistente técnico que utiliza uma base de conhecimento criada por especialistas do suporte e colaboradores da Narwal Sistemas.
+
+    Atualmente, não utiliza IA Generativa (LLM).
+
+    Você pode consultar:
+    - Perguntas sobre erros frequentes e manuais técnicos.
+    - Comandos SQL para resolução de problemas comuns.
+    - Análise de erros específicos, incluindo trechos de logs.
+    - Análise automática (OCR) de imagens contendo mensagens de erro.
+    - Variáveis de ambiente do Narwal (busca somente por descrição).
+    - Consulta de erros conhecidos no Azure DevOps.
+    - Consulta de erros conhecidos em chamados no Movidesk.
+    """)
 
 # Redirecionamento
 if st.session_state.get("ir_para_template_n2"):
