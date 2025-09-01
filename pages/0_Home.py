@@ -77,24 +77,24 @@ with st.expander("📸 Analisar com IA", expanded=False):
                 resultado = analisar_imagem_com_contexto(imagem_bytes, comentario)
 
             if resultado:
-                st.markdown("## 🦢 Resultado da Análise:")
+                st.markdown("**Resultado da Análise:**")
 
                 if resultado.get("erro_detectado"):
                     st.markdown(f"**Erro identificado:** `{resultado['erro_detectado']}`")
 
                 if resultado.get("rotina"):
-                    st.markdown(f"### 🔵 Rotina provável: {resultado['rotina']}")
+                    st.markdown(f"**Rotina provável:** {resultado['rotina']}")
 
                 if resultado.get("explicacao"):
-                    st.markdown("### 📄 Explicação:")
+                    st.markdown("**Explicação:**")
                     st.markdown(resultado["explicacao"])
 
                 if resultado.get("acao_n1"):
-                    st.markdown("### ✅ Ação recomendada:")
+                    st.markdown("**Ação recomendada:**")
                     st.markdown(resultado["acao_n1"])
 
                 if resultado.get("faq_relevante"):
-                    st.markdown("### 📒 Solução sugerida:")
+                    st.markdown("**Solução sugerida:**")
                     st.markdown(resultado["faq_relevante"])
 
                 if resultado.get("erro_detectado"):
